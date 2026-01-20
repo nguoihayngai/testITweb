@@ -50,10 +50,10 @@ export const courses = [
      )
    },
    {
-     title: 'Giới thiệu Machine Learning',
+     title: 'Tổng hợp 25 khái niệm AI & Machine Learning trong 10 phút',
      description: 'Bắt đầu hành trình vào thế giới Trí Tuệ Nhân Tạo với các khái niệm cốt lõi về Học Máy.',
-     author: 'Phạm Đình Khánh',
-     youtubeId: 'yPo7-n76A4A',
+     author: 'Việt Nguyễn AI',
+     youtubeId: 'avgc1rigwec',
    },
    {
      title: 'An ninh Mạng',
