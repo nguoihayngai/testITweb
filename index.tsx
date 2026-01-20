@@ -115,6 +115,27 @@ const App = () => {
     },
   ];
 
+  const featuredCourses = [
+    {
+      title: 'Lập Trình Web Fullstack (F8 Official)',
+      description: 'Trở thành lập trình viên web chuyên nghiệp sau khóa học này, bao gồm cả frontend và backend.',
+      author: 'Sơn Đặng',
+      youtubeId: 'R6plp__K3_o',
+    },
+    {
+      title: 'Khóa Học Lập Trình C++ Cơ Bản (CodeLearn.io)',
+      description: 'Nắm vững những kiến thức nền tảng và quan trọng nhất của ngôn ngữ lập trình C++.',
+      author: 'CodeLearn.io',
+      youtubeId: 'S2xxw-b_T_w',
+    },
+    {
+      title: 'Machine Learning Cơ Bản (Machine Learning Cơ Bản)',
+      description: 'Bắt đầu hành trình vào thế giới Trí Tuệ Nhân Tạo với các khái niệm cốt lõi về Học Máy.',
+      author: 'Machine Learning Cơ Bản',
+      youtubeId: '4dbeB_7SGPI',
+    },
+  ];
+
   const algorithms = [
     {
       title: 'Thuật Toán Sắp Xếp',
@@ -980,15 +1001,16 @@ def dijkstra(graph, start):
       <header style={styles.header}>
         <h1 className="logo" style={styles.logo}>IT Explorer</h1>
         <nav className="mainNav">
-          <a href="#" className="navLink" style={styles.navLink}>Trang Chủ</a>
-          <a href="#" className="navLink" style={styles.navLink}>Khóa Học</a>
-          <a href="#" className="navLink" style={styles.navLink}>Giới Thiệu</a>
-          <a href="#" className="navLink" style={styles.navLink}>Liên Hệ</a>
+          <a href="#hero" className="navLink" style={styles.navLink}>Trang Chủ</a>
+          <a href="#courses" className="navLink" style={styles.navLink}>Khóa Học</a>
+          <a href="#featured-videos" className="navLink" style={styles.navLink}>Videos</a>
+          <a href="#about" className="navLink" style={styles.navLink}>Giới Thiệu</a>
+          <a href="#contact" className="navLink" style={styles.navLink}>Liên Hệ</a>
         </nav>
       </header>
 
       <main style={styles.main}>
-        <section style={styles.hero}>
+        <section id="hero" style={styles.hero}>
           <h2 className="heroTitle" style={styles.heroTitle}>Chinh Phục Thế Giới Số</h2>
           <p style={styles.heroSubtitle}>
             Bắt đầu hành trình của bạn với các khóa học tin học từ cơ bản đến nâng cao, được thiết kế cho tương lai.
@@ -996,13 +1018,35 @@ def dijkstra(graph, start):
           <button className="ctaButton" style={styles.ctaButton}>Bắt Đầu Ngay</button>
         </section>
 
-        <section style={styles.coursesSection}>
+        <section id="courses" style={styles.coursesSection}>
           <h3 style={styles.sectionTitle}>Các Khóa Học Nổi Bật</h3>
           <div style={styles.coursesGrid}>
             {courses.map((course, index) => (
               <div key={index} className="courseCard" style={{...styles.courseCard, cursor: 'pointer'}} onClick={() => setSelectedItem(course)}>
                 <div style={styles.courseIcon}>{course.icon}</div>
                 <h4 style={styles.courseTitle}>{course.title}</h4>
+                <p style={styles.courseDescription}>{course.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="featured-videos" style={styles.featuredCoursesSection}>
+          <h3 style={styles.sectionTitle}>Khóa Học Video Tiêu Biểu</h3>
+          <div style={styles.featuredCoursesGrid}>
+            {featuredCourses.map((course, index) => (
+              <div key={index} style={styles.featuredCourseCard}>
+                <div style={styles.videoContainer}>
+                  <iframe
+                    style={styles.videoIframe}
+                    src={`https://www.youtube.com/embed/${course.youtubeId}`}
+                    title={course.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <h4 style={styles.featuredCourseTitle}>{course.title}</h4>
+                <p style={styles.featuredCourseAuthor}>Tác giả: {course.author}</p>
                 <p style={styles.courseDescription}>{course.description}</p>
               </div>
             ))}
@@ -1021,6 +1065,25 @@ def dijkstra(graph, start):
             ))}
           </div>
         </section>
+
+        <section id="about" style={styles.aboutSection}>
+            <h3 style={styles.sectionTitle}>Về IT Explorer</h3>
+            <p style={styles.aboutText}>
+                IT Explorer là một nền tảng giáo dục trực tuyến dành riêng cho việc chia sẻ kiến thức về khoa học máy tính và lập trình. Sứ mệnh của chúng tôi là cung cấp các tài nguyên học tập chất lượng cao, dễ tiếp cận cho tất cả mọi người, từ những người mới bắt đầu cho đến các lập trình viên có kinh nghiệm muốn nâng cao kỹ năng. Chúng tôi tin rằng bất kỳ ai cũng có thể học lập trình và tạo ra những sản phẩm công nghệ tuyệt vời.
+            </p>
+        </section>
+
+        <section id="contact" style={styles.contactSection}>
+            <h3 style={styles.sectionTitle}>Liên Hệ Với Chúng Tôi</h3>
+            <p style={styles.contactText}>
+                Nếu bạn có bất kỳ câu hỏi, góp ý hoặc mong muốn hợp tác, đừng ngần ngại liên hệ với chúng tôi.
+            </p>
+            <div style={styles.contactInfo}>
+                <p><strong>Email:</strong> <a href="mailto:contact@itexplorer.dev" style={styles.contactLink}>contact@itexplorer.dev</a></p>
+                <p><strong>Theo dõi chúng tôi trên mạng xã hội:</strong> @ITExplorer</p>
+            </div>
+        </section>
+
       </main>
 
       <footer style={styles.footer}>
@@ -1096,9 +1159,43 @@ const styles: { [key: string]: React.CSSProperties } = {
   coursesSection: {
     padding: '4rem 2rem',
   },
+  featuredCoursesSection: {
+    padding: '4rem 2rem',
+    backgroundColor: '#ffffff',
+  },
   algorithmsSection: {
     padding: '4rem 2rem',
     backgroundColor: '#f8f9fa',
+  },
+  aboutSection: {
+    padding: '4rem 2rem',
+    backgroundColor: '#ffffff',
+  },
+  aboutText: {
+    maxWidth: '800px',
+    margin: '0 auto',
+    textAlign: 'center',
+    fontSize: '1.1rem',
+    lineHeight: '1.8',
+    color: '#555',
+  },
+  contactSection: {
+    padding: '4rem 2rem',
+    backgroundColor: '#f8f9fa',
+    textAlign: 'center',
+  },
+  contactText: {
+    fontSize: '1.1rem',
+    color: '#555',
+    marginBottom: '1.5rem',
+  },
+  contactInfo: {
+    lineHeight: '1.8',
+  },
+  contactLink: {
+    color: '#007aff',
+    textDecoration: 'none',
+    fontWeight: 500,
   },
   sectionTitle: {
     textAlign: 'center',
@@ -1113,6 +1210,13 @@ const styles: { [key: string]: React.CSSProperties } = {
     maxWidth: '1200px',
     margin: '0 auto',
   },
+  featuredCoursesGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+    gap: '2rem',
+    maxWidth: '1200px',
+    margin: '0 auto',
+  },
   courseCard: {
     backgroundColor: '#ffffff',
     padding: '2rem',
@@ -1120,6 +1224,38 @@ const styles: { [key: string]: React.CSSProperties } = {
     boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
     textAlign: 'center',
     transition: 'transform 0.3s, box-shadow 0.3s',
+  },
+  featuredCourseCard: {
+    backgroundColor: '#ffffff',
+    borderRadius: '12px',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  videoContainer: {
+    position: 'relative',
+    paddingBottom: '56.25%', // 16:9 Aspect Ratio
+    height: 0,
+    overflow: 'hidden',
+  },
+  videoIframe: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    border: 'none',
+  },
+  featuredCourseTitle: {
+    fontSize: '1.4rem',
+    margin: '1rem 1.5rem 0.5rem 1.5rem',
+    color: '#007aff',
+  },
+  featuredCourseAuthor: {
+    fontSize: '0.9rem',
+    color: '#888',
+    margin: '0 1.5rem 1rem 1.5rem',
   },
   courseIcon: {
     fontSize: '3rem',
@@ -1133,6 +1269,8 @@ const styles: { [key: string]: React.CSSProperties } = {
   courseDescription: {
     color: '#666',
     lineHeight: '1.6',
+    margin: '0 1.5rem 1.5rem 1.5rem',
+    flexGrow: 1,
   },
   footer: {
     textAlign: 'center',
