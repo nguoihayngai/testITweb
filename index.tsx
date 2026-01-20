@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -45,8 +47,14 @@ const App = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const courses = [
+     {
+      title: 'Lộ trình học lập trình Web',
+      description: 'Lộ trình chi tiết để trở thành lập trình viên web chuyên nghiệp cho người mới bắt đầu.',
+      author: 'Sơn Đặng (F8 Official)',
+      youtubeId: 'E_3ex0sX884',
+    },
     {
-      title: 'Nhập môn Lập trình',
+      title: 'Nhập môn Lập trình Python',
       description: 'Khám phá các khái niệm cơ bản về lập trình, tư duy logic và giải quyết vấn đề với Python.',
       icon: '💻',
       content: (
@@ -61,6 +69,12 @@ const App = () => {
           </ul>
         </>
       )
+    },
+     {
+      title: 'Lập Trình C++ Cơ Bản',
+      description: 'Nắm vững những kiến thức nền tảng và quan trọng nhất của ngôn ngữ lập trình C++.',
+      author: '28tech',
+      youtubeId: 'Dq0k-sgT6oI',
     },
     {
       title: 'Phát triển Web Hiện đại',
@@ -80,21 +94,10 @@ const App = () => {
       )
     },
     {
-      title: 'Khoa học Dữ liệu & AI',
-      description: 'Tìm hiểu cách phân tích dữ liệu, xây dựng mô hình học máy và trí tuệ nhân tạo.',
-      icon: '🤖',
-       content: (
-        <>
-          <p>Dữ liệu là "dầu mỏ" của thế kỷ 21. Khóa học này trang bị cho bạn các kỹ năng để khai thác giá trị từ dữ liệu và xây dựng các hệ thống thông minh.</p>
-          <h4>Kỹ năng đạt được:</h4>
-          <ul>
-            <li>Sử dụng các thư viện Python như Pandas, NumPy, Scikit-learn.</li>
-            <li>Tiền xử lý và trực quan hóa dữ liệu.</li>
-            <li>Xây dựng và đánh giá các mô hình học máy cho bài toán phân loại và hồi quy.</li>
-            <li>Giới thiệu về mạng nơ-ron và học sâu (Deep Learning).</li>
-          </ul>
-        </>
-      )
+      title: 'Giới thiệu Machine Learning',
+      description: 'Bắt đầu hành trình vào thế giới Trí Tuệ Nhân Tạo với các khái niệm cốt lõi về Học Máy.',
+      author: 'Phạm Đình Khánh',
+      youtubeId: 'yPo7-n76A4A',
     },
     {
       title: 'An ninh Mạng',
@@ -112,27 +115,6 @@ const App = () => {
           </ul>
         </>
       )
-    },
-  ];
-
-  const featuredCourses = [
-    {
-      title: 'Lập Trình Web Fullstack (F8 Official)',
-      description: 'Trở thành lập trình viên web chuyên nghiệp sau khóa học này, bao gồm cả frontend và backend.',
-      author: 'Sơn Đặng',
-      youtubeId: 'R6plp__K3_o',
-    },
-    {
-      title: 'Khóa Học Lập Trình C++ Cơ Bản (CodeLearn.io)',
-      description: 'Nắm vững những kiến thức nền tảng và quan trọng nhất của ngôn ngữ lập trình C++.',
-      author: 'CodeLearn.io',
-      youtubeId: 'S2xxw-b_T_w',
-    },
-    {
-      title: 'Machine Learning Cơ Bản (Machine Learning Cơ Bản)',
-      description: 'Bắt đầu hành trình vào thế giới Trí Tuệ Nhân Tạo với các khái niệm cốt lõi về Học Máy.',
-      author: 'Machine Learning Cơ Bản',
-      youtubeId: '4dbeB_7SGPI',
     },
   ];
 
@@ -1003,7 +985,6 @@ def dijkstra(graph, start):
         <nav className="mainNav">
           <a href="#hero" className="navLink" style={styles.navLink}>Trang Chủ</a>
           <a href="#courses" className="navLink" style={styles.navLink}>Khóa Học</a>
-          <a href="#featured-videos" className="navLink" style={styles.navLink}>Videos</a>
           <a href="#about" className="navLink" style={styles.navLink}>Giới Thiệu</a>
           <a href="#contact" className="navLink" style={styles.navLink}>Liên Hệ</a>
         </nav>
@@ -1021,35 +1002,36 @@ def dijkstra(graph, start):
         <section id="courses" style={styles.coursesSection}>
           <h3 style={styles.sectionTitle}>Các Khóa Học Nổi Bật</h3>
           <div style={styles.coursesGrid}>
-            {courses.map((course, index) => (
-              <div key={index} className="courseCard" style={{...styles.courseCard, cursor: 'pointer'}} onClick={() => setSelectedItem(course)}>
-                <div style={styles.courseIcon}>{course.icon}</div>
-                <h4 style={styles.courseTitle}>{course.title}</h4>
-                <p style={styles.courseDescription}>{course.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="featured-videos" style={styles.featuredCoursesSection}>
-          <h3 style={styles.sectionTitle}>Khóa Học Video Tiêu Biểu</h3>
-          <div style={styles.featuredCoursesGrid}>
-            {featuredCourses.map((course, index) => (
-              <div key={index} style={styles.featuredCourseCard}>
-                <div style={styles.videoContainer}>
-                  <iframe
-                    style={styles.videoIframe}
-                    src={`https://www.youtube.com/embed/${course.youtubeId}`}
-                    title={course.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                <h4 style={styles.featuredCourseTitle}>{course.title}</h4>
-                <p style={styles.featuredCourseAuthor}>Tác giả: {course.author}</p>
-                <p style={styles.courseDescription}>{course.description}</p>
-              </div>
-            ))}
+            {courses.map((course, index) => {
+                if (course.youtubeId) {
+                  return (
+                    <div key={index} style={styles.videoCourseCard}>
+                      <div style={styles.videoContainer}>
+                        <iframe
+                          style={styles.videoIframe}
+                          src={`https://www.youtube.com/embed/${course.youtubeId}?rel=0`}
+                          title={course.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                      <div style={styles.cardContent}>
+                         <h4 style={styles.videoCourseTitle}>{course.title}</h4>
+                         {course.author && <p style={styles.videoCourseAuthor}>Tác giả: {course.author}</p>}
+                         <p style={styles.videoCardDescription}>{course.description}</p>
+                      </div>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div key={index} className="courseCard" style={{...styles.courseCard, cursor: 'pointer'}} onClick={() => setSelectedItem(course)}>
+                      <div style={styles.courseIcon}>{course.icon}</div>
+                      <h4 style={styles.courseTitle}>{course.title}</h4>
+                      <p style={styles.iconCardDescription}>{course.description}</p>
+                    </div>
+                  );
+                }
+              })}
           </div>
         </section>
 
@@ -1060,7 +1042,7 @@ def dijkstra(graph, start):
               <div key={index} className="courseCard" style={{...styles.courseCard, cursor: 'pointer'}} onClick={() => setSelectedItem(algo)}>
                 <div style={styles.courseIcon}>{algo.icon}</div>
                 <h4 style={styles.courseTitle}>{algo.title}</h4>
-                <p style={styles.courseDescription}>{algo.description}</p>
+                <p style={styles.iconCardDescription}>{algo.description}</p>
               </div>
             ))}
           </div>
@@ -1158,18 +1140,15 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   coursesSection: {
     padding: '4rem 2rem',
-  },
-  featuredCoursesSection: {
-    padding: '4rem 2rem',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f8f9fa',
   },
   algorithmsSection: {
     padding: '4rem 2rem',
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#ffffff',
   },
   aboutSection: {
     padding: '4rem 2rem',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f8f9fa',
   },
   aboutText: {
     maxWidth: '800px',
@@ -1181,7 +1160,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   contactSection: {
     padding: '4rem 2rem',
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#ffffff',
     textAlign: 'center',
   },
   contactText: {
@@ -1205,27 +1184,22 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   coursesGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
     gap: '2rem',
     maxWidth: '1200px',
     margin: '0 auto',
   },
-  featuredCoursesGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-    gap: '2rem',
-    maxWidth: '1200px',
-    margin: '0 auto',
-  },
-  courseCard: {
+  courseCard: { // Icon card
     backgroundColor: '#ffffff',
     padding: '2rem',
     borderRadius: '12px',
     boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
     textAlign: 'center',
     transition: 'transform 0.3s, box-shadow 0.3s',
+    display: 'flex',
+    flexDirection: 'column',
   },
-  featuredCourseCard: {
+  videoCourseCard: { // Video card
     backgroundColor: '#ffffff',
     borderRadius: '12px',
     boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
@@ -1233,11 +1207,18 @@ const styles: { [key: string]: React.CSSProperties } = {
     display: 'flex',
     flexDirection: 'column',
   },
+  cardContent: {
+      padding: '0 1.5rem 1.5rem 1.5rem',
+      display: 'flex',
+      flexDirection: 'column',
+      flexGrow: 1,
+  },
   videoContainer: {
     position: 'relative',
     paddingBottom: '56.25%', // 16:9 Aspect Ratio
     height: 0,
     overflow: 'hidden',
+    flexShrink: 0,
   },
   videoIframe: {
     position: 'absolute',
@@ -1247,15 +1228,16 @@ const styles: { [key: string]: React.CSSProperties } = {
     height: '100%',
     border: 'none',
   },
-  featuredCourseTitle: {
+  videoCourseTitle: {
     fontSize: '1.4rem',
-    margin: '1rem 1.5rem 0.5rem 1.5rem',
+    marginTop: '1rem',
+    marginBottom: '0.5rem',
     color: '#007aff',
   },
-  featuredCourseAuthor: {
+  videoCourseAuthor: {
     fontSize: '0.9rem',
     color: '#888',
-    margin: '0 1.5rem 1rem 1.5rem',
+    margin: '0 0 1rem 0',
   },
   courseIcon: {
     fontSize: '3rem',
@@ -1266,11 +1248,15 @@ const styles: { [key: string]: React.CSSProperties } = {
     marginBottom: '0.5rem',
     color: '#007aff',
   },
-  courseDescription: {
+  iconCardDescription: {
     color: '#666',
     lineHeight: '1.6',
-    margin: '0 1.5rem 1.5rem 1.5rem',
     flexGrow: 1,
+  },
+  videoCardDescription: {
+      color: '#666',
+      lineHeight: '1.6',
+      flexGrow: 1,
   },
   footer: {
     textAlign: 'center',
@@ -1372,10 +1358,13 @@ const DynamicStyles = () => {
 
 
 const container = document.getElementById('root');
-const root = createRoot(container);
-root.render(
-  <>
-    <DynamicStyles />
-    <App />
-  </>
-);
+// FIX: Add a null check for the container to prevent the app from crashing if the 'root' element doesn't exist.
+if (container) {
+  const root = createRoot(container);
+  root.render(
+    <>
+      <DynamicStyles />
+      <App />
+    </>
+  );
+}
