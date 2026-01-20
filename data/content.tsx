@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CodeBlock } from '../components/CodeBlock';
+import { CodeBlock } from '../components/CodeBlock.tsx';
 
 export const courses = [
     {
@@ -30,7 +30,7 @@ export const courses = [
      title: 'Lập Trình C++ Cơ Bản',
      description: 'Nắm vững những kiến thức nền tảng và quan trọng nhất của ngôn ngữ lập trình C++.',
      author: '28tech',
-     youtubeId: '74B6PXO97Tw',
+     youtubeId: 'Dq0k-sgT6oI',
    },
    {
      title: 'Phát triển Web Hiện đại',
@@ -50,10 +50,10 @@ export const courses = [
      )
    },
    {
-     title: 'Tổng hợp 25 khái niệm AI & Machine Learning trong 10 phút',
+     title: 'Giới thiệu Machine Learning',
      description: 'Bắt đầu hành trình vào thế giới Trí Tuệ Nhân Tạo với các khái niệm cốt lõi về Học Máy.',
-     author: 'Việt Nguyễn AI',
-     youtubeId: 'avgc1rigwec',
+     author: 'Phạm Đình Khánh',
+     youtubeId: 'yPo7-n76A4A',
    },
    {
      title: 'An ninh Mạng',

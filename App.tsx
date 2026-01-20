@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { courses, algorithms } from './data/content';
-import { Modal } from './components/Modal';
-import { styles } from './styles';
+import { courses, algorithms } from './data/content.tsx';
+import { Modal } from './components/Modal.tsx';
+import { styles } from './styles.ts';
 
 export const App = () => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -47,7 +47,7 @@ export const App = () => {
                       <div style={styles.cardContent}>
                          <h4 style={styles.videoCourseTitle}>{course.title}</h4>
                          {course.author && <p style={styles.videoCourseAuthor}>Tác giả: {course.author}</p>}
-                         <p style={styles.videoCardDescription}>{course.description}</p>
+                         <p style={styles.videoCourseDescription}>{course.description}</p>
                       </div>
                     </div>
                   );
