@@ -1,0 +1,17 @@
+# This is a configuration file for Cloudflare Pages.
+# It helps Cloudflare understand how to build and deploy your project.
+
+# The name of your project.
+name = "it-explorer-web"
+
+# The date to use for compatibility checks. This ensures your project
+# continues to work even as Cloudflare's platform evolves.
+compatibility_date = "2024-05-21"
+
+# [pages]
+# This section contains settings specific to Cloudflare Pages.
+
+# The directory containing your static assets to be uploaded.
+# Since this project uses in-browser transpilation and has no build step,
+# the output directory is the root of the project itself.
+pages_build_output_dir = "."
