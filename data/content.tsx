@@ -7,7 +7,7 @@ export const courses = [
      title: 'Lộ trình học lập trình Web',
      description: 'Lộ trình chi tiết để trở thành lập trình viên web chuyên nghiệp cho người mới bắt đầu.',
      author: 'Sơn Đặng (F8 Official)',
-     youtubeId: 'zoELAirXMJY',
+     youtubeId: 'E_3ex0sX884',
    },
    {
      title: 'Nhập môn Lập trình Python',
