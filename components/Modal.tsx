@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { styles } from '../styles.ts';
+import { styles } from '../styles';
 
 export const Modal = ({ item, onClose }) => {
     if (!item) return null;

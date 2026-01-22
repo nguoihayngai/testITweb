@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { App } from './App.tsx';
-import { DynamicStyles } from './components/DynamicStyles.tsx';
+import { App } from './App';
+import { DynamicStyles } from './components/DynamicStyles';
 
 const container = document.getElementById('root');
 if (container) {

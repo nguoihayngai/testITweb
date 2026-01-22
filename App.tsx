@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { courses, algorithms } from './data/content.tsx';
-import { Modal } from './components/Modal.tsx';
-import { styles } from './styles.ts';
+import { courses, algorithms } from './data/content';
+import { Modal } from './components/Modal';
+import { styles } from './styles';
 
 export const App = () => {
   const [selectedItem, setSelectedItem] = useState(null);

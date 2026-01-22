@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CodeBlock } from '../components/CodeBlock.tsx';
+import { CodeBlock } from '../components/CodeBlock';
 
 export const courses = [
     {

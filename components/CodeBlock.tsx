@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { styles } from '../styles.ts';
+import { styles } from '../styles';
 
 export const CodeBlock = ({ snippets }) => {
   const [lang, setLang] = useState('cpp');
