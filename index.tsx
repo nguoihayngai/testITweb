@@ -111,10 +111,10 @@ const App = () => {
   );
 };
 
-// FIX: Explicitly type the `styles` object to ensure correct type inference for CSS properties.
-// This resolves an issue where TypeScript would infer properties like `position` as a generic `string`
-// instead of a specific literal type (e.g., 'absolute'), causing overload resolution to fail for React.createElement.
-const styles: Record<string, React.CSSProperties> = {
+// FIX: Use 'as const' to ensure correct type inference for CSS properties.
+// This gives each property a literal type (e.g., 'position' becomes 'sticky' instead of 'string'),
+// which helps TypeScript's overload resolution for React.createElement.
+const styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
@@ -278,7 +278,7 @@ const styles: Record<string, React.CSSProperties> = {
     margin: '0 0 1rem 0',
     border: '1px solid #ddd'
   }
-};
+} as const;
 
 const DynamicStyles = () => {
   useEffect(() => {
