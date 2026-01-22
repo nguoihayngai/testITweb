@@ -75,9 +75,13 @@ const App = () => {
 
   return React.createElement('div', { style: styles.container },
     React.createElement('header', { style: styles.header },
-      React.createElement('h1', { className: "logo", style: styles.logo }, 'IT of Van Lang'),
+      React.createElement('h1', { className: "logo", style: styles.logo },
+        'IT',
+        React.createElement('span', { style: { fontSize: 'calc(2rem * 2 / 5)', fontWeight: 400, marginLeft: '2px' } }, 'of Van Lang')
+      ),
       React.createElement('nav', { className: "mainNav" },
-        React.createElement('a', { href: "#hero", className: "navLink", style: styles.navLink }, 'Trang Chủ')
+        React.createElement('a', { href: "#hero", className: "navLink", style: styles.navLink }, 'Trang Chủ'),
+        React.createElement('a', { href: "#!", onClick: (e) => e.preventDefault(), className: "navLink", style: styles.navLink }, 'VLOJ')
       )
     ),
     React.createElement('main', { style: styles.main },
@@ -128,6 +132,8 @@ const styles = {
     color: '#007aff',
     margin: 0,
     lineHeight: 1,
+    display: 'flex',
+    alignItems: 'baseline',
   },
   navLink: {
     margin: '0 1rem',

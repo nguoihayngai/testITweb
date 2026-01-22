@@ -76,9 +76,13 @@ const App = () => {
 
   return React.createElement('div', { style: styles.container },
     React.createElement('header', { style: styles.header },
-      React.createElement('h1', { className: "logo", style: styles.logo }, 'IT of Van Lang'),
+      React.createElement('h1', { className: "logo", style: styles.logo },
+        'IT',
+        React.createElement('span', { style: { fontSize: 'calc(2rem * 2 / 5)', fontWeight: 400, marginLeft: '2px' } }, 'of Van Lang')
+      ),
       React.createElement('nav', { className: "mainNav" },
-        React.createElement('a', { href: "#hero", className: "navLink", style: styles.navLink }, 'Trang Chủ')
+        React.createElement('a', { href: "#hero", className: "navLink", style: styles.navLink }, 'Trang Chủ'),
+        React.createElement('a', { href: "#!", onClick: (e) => e.preventDefault(), className: "navLink", style: styles.navLink }, 'VLOJ')
       )
     ),
     React.createElement('main', { style: styles.main },
@@ -110,7 +114,7 @@ const App = () => {
 // FIX: Explicitly type the `styles` object to ensure correct type inference for CSS properties.
 // This resolves an issue where TypeScript would infer properties like `position` as a generic `string`
 // instead of a specific literal type (e.g., 'absolute'), causing overload resolution to fail for React.createElement.
-const styles: { [key: string]: React.CSSProperties } = {
+const styles: Record<string, React.CSSProperties> = {
   container: {
     display: 'flex',
     flexDirection: 'column',
@@ -132,6 +136,8 @@ const styles: { [key: string]: React.CSSProperties } = {
     color: '#007aff',
     margin: 0,
     lineHeight: 1,
+    display: 'flex',
+    alignItems: 'baseline',
   },
   navLink: {
     margin: '0 1rem',
