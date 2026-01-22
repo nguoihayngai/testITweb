@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -45,78 +44,6 @@ const CodeBlock = ({ snippets }) => {
 
 const App = () => {
   const [selectedItem, setSelectedItem] = useState(null);
-
-  const courses = [
-     {
-      title: 'Lộ trình học lập trình Web',
-      description: 'Lộ trình chi tiết để trở thành lập trình viên web chuyên nghiệp cho người mới bắt đầu.',
-      author: 'Sơn Đặng (F8 Official)',
-      youtubeId: 'E_3ex0sX884',
-    },
-    {
-      title: 'Nhập môn Lập trình Python',
-      description: 'Khám phá các khái niệm cơ bản về lập trình, tư duy logic và giải quyết vấn đề với Python.',
-      icon: '💻',
-      content: (
-        <>
-          <p>Khóa học này là bước khởi đầu hoàn hảo cho bất kỳ ai muốn bước vào thế giới lập trình. Bạn sẽ học các khái niệm cốt lõi như biến, kiểu dữ liệu, cấu trúc điều khiển (if/else, vòng lặp), và hàm.</p>
-          <h4>Nội dung chính:</h4>
-          <ul>
-            <li>Giới thiệu về tư duy máy tính và giải thuật.</li>
-            <li>Cú pháp và ngữ nghĩa cơ bản của ngôn ngữ Python.</li>
-            <li>Thực hành giải quyết các bài toán lập trình cơ bản.</li>
-            <li>Xây dựng một dự án nhỏ cuối khóa để áp dụng kiến thức.</li>
-          </ul>
-        </>
-      )
-    },
-     {
-      title: 'Lập Trình C++ Cơ Bản',
-      description: 'Nắm vững những kiến thức nền tảng và quan trọng nhất của ngôn ngữ lập trình C++.',
-      author: '28tech',
-      youtubeId: 'Dq0k-sgT6oI',
-    },
-    {
-      title: 'Phát triển Web Hiện đại',
-      description: 'Xây dựng các ứng dụng web tương tác và đáp ứng bằng các công nghệ mới nhất như React, Node.js.',
-      icon: '🌐',
-      content: (
-        <>
-          <p>Trở thành một nhà phát triển web full-stack bằng cách nắm vững cả frontend và backend. Khóa học tập trung vào các công nghệ phổ biến nhất hiện nay.</p>
-          <h4>Công nghệ được học:</h4>
-          <ul>
-            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), và thư viện React.</li>
-            <li><strong>Backend:</strong> Node.js, Express.js để xây dựng API.</li>
-            <li><strong>Cơ sở dữ liệu:</strong> Làm việc với cơ sở dữ liệu NoSQL như MongoDB.</li>
-            <li>Triển khai ứng dụng web lên các nền tảng đám mây.</li>
-          </ul>
-        </>
-      )
-    },
-    {
-      title: 'Giới thiệu Machine Learning',
-      description: 'Bắt đầu hành trình vào thế giới Trí Tuệ Nhân Tạo với các khái niệm cốt lõi về Học Máy.',
-      author: 'Phạm Đình Khánh',
-      youtubeId: 'yPo7-n76A4A',
-    },
-    {
-      title: 'An ninh Mạng',
-      description: 'Bảo vệ hệ thống và dữ liệu khỏi các mối đe dọa với các kỹ thuật phòng thủ và tấn công mạng.',
-      icon: '🛡️',
-      content: (
-        <>
-          <p>Trong một thế giới ngày càng kết nối, an ninh mạng là kỹ năng cực kỳ quan trọng. Khóa học này cung cấp kiến thức toàn diện về cách bảo vệ tài sản số.</p>
-          <h4>Chủ đề bao gồm:</h4>
-          <ul>
-            <li>Các loại tấn công mạng phổ biến (Malware, Phishing, DDoS).</li>
-            <li>Bảo mật mạng, mật mã học và chữ ký số.</li>
-            <li>Kiểm thử xâm nhập (Penetration Testing) có đạo đức.</li>
-            <li>Phân tích và ứng phó với sự cố an ninh.</li>
-          </ul>
-        </>
-      )
-    },
-  ];
 
   const algorithms = [
     {
@@ -984,7 +911,6 @@ def dijkstra(graph, start):
         <h1 className="logo" style={styles.logo}>IT Explorer</h1>
         <nav className="mainNav">
           <a href="#hero" className="navLink" style={styles.navLink}>Trang Chủ</a>
-          <a href="#courses" className="navLink" style={styles.navLink}>Khóa Học</a>
           <a href="#about" className="navLink" style={styles.navLink}>Giới Thiệu</a>
           <a href="#contact" className="navLink" style={styles.navLink}>Liên Hệ</a>
         </nav>
@@ -997,42 +923,6 @@ def dijkstra(graph, start):
             Bắt đầu hành trình của bạn với các khóa học tin học từ cơ bản đến nâng cao, được thiết kế cho tương lai.
           </p>
           <button className="ctaButton" style={styles.ctaButton}>Bắt Đầu Ngay</button>
-        </section>
-
-        <section id="courses" style={styles.coursesSection}>
-          <h3 style={styles.sectionTitle}>Các Khóa Học Nổi Bật</h3>
-          <div style={styles.coursesGrid}>
-            {courses.map((course, index) => {
-                if (course.youtubeId) {
-                  return (
-                    <div key={index} style={styles.videoCourseCard}>
-                      <div style={styles.videoContainer}>
-                        <iframe
-                          style={styles.videoIframe}
-                          src={`https://www.youtube.com/embed/${course.youtubeId}?rel=0`}
-                          title={course.title}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
-                      </div>
-                      <div style={styles.cardContent}>
-                         <h4 style={styles.videoCourseTitle}>{course.title}</h4>
-                         {course.author && <p style={styles.videoCourseAuthor}>Tác giả: {course.author}</p>}
-                         <p style={styles.videoCardDescription}>{course.description}</p>
-                      </div>
-                    </div>
-                  );
-                } else {
-                  return (
-                    <div key={index} className="courseCard" style={{...styles.courseCard, cursor: 'pointer'}} onClick={() => setSelectedItem(course)}>
-                      <div style={styles.courseIcon}>{course.icon}</div>
-                      <h4 style={styles.courseTitle}>{course.title}</h4>
-                      <p style={styles.iconCardDescription}>{course.description}</p>
-                    </div>
-                  );
-                }
-              })}
-          </div>
         </section>
 
         <section style={styles.algorithmsSection}>
@@ -1138,17 +1028,13 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontWeight: 'bold',
     transition: 'background-color 0.3s, transform 0.2s',
   },
-  coursesSection: {
-    padding: '4rem 2rem',
-    backgroundColor: '#f8f9fa',
-  },
   algorithmsSection: {
     padding: '4rem 2rem',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f8f9fa',
   },
   aboutSection: {
     padding: '4rem 2rem',
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#ffffff',
   },
   aboutText: {
     maxWidth: '800px',
@@ -1160,7 +1046,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   contactSection: {
     padding: '4rem 2rem',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f8f9fa',
     textAlign: 'center',
   },
   contactText: {
@@ -1199,46 +1085,6 @@ const styles: { [key: string]: React.CSSProperties } = {
     display: 'flex',
     flexDirection: 'column',
   },
-  videoCourseCard: { // Video card
-    backgroundColor: '#ffffff',
-    borderRadius: '12px',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-    overflow: 'hidden',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  cardContent: {
-      padding: '0 1.5rem 1.5rem 1.5rem',
-      display: 'flex',
-      flexDirection: 'column',
-      flexGrow: 1,
-  },
-  videoContainer: {
-    position: 'relative',
-    paddingBottom: '56.25%', // 16:9 Aspect Ratio
-    height: 0,
-    overflow: 'hidden',
-    flexShrink: 0,
-  },
-  videoIframe: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    border: 'none',
-  },
-  videoCourseTitle: {
-    fontSize: '1.4rem',
-    marginTop: '1rem',
-    marginBottom: '0.5rem',
-    color: '#007aff',
-  },
-  videoCourseAuthor: {
-    fontSize: '0.9rem',
-    color: '#888',
-    margin: '0 0 1rem 0',
-  },
   courseIcon: {
     fontSize: '3rem',
     marginBottom: '1rem',
@@ -1252,11 +1098,6 @@ const styles: { [key: string]: React.CSSProperties } = {
     color: '#666',
     lineHeight: '1.6',
     flexGrow: 1,
-  },
-  videoCardDescription: {
-      color: '#666',
-      lineHeight: '1.6',
-      flexGrow: 1,
   },
   footer: {
     textAlign: 'center',
