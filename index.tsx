@@ -668,7 +668,7 @@ def insert(root, key):
             java: `class Node {
     int key;
     Node left, right;
-    public Node(int item) { key = item; left = right = null; }
+    public Node(item) { key = item; left = right = null; }
 }
 class BinarySearchTree {
     Node root;
@@ -908,19 +908,19 @@ def dijkstra(graph, start):
   return (
     <div style={styles.container}>
       <header style={styles.header}>
-        <h1 className="logo" style={styles.logo}>IT Explorer</h1>
+        <h1 className="logo" style={styles.logo}>
+            IT of Van Lang
+        </h1>
         <nav className="mainNav">
           <a href="#hero" className="navLink" style={styles.navLink}>Trang Chủ</a>
-          <a href="#about" className="navLink" style={styles.navLink}>Giới Thiệu</a>
-          <a href="#contact" className="navLink" style={styles.navLink}>Liên Hệ</a>
         </nav>
       </header>
 
       <main style={styles.main}>
         <section id="hero" style={styles.hero}>
-          <h2 className="heroTitle" style={styles.heroTitle}>Chinh Phục Thế Giới Số</h2>
+          <h2 className="heroTitle" style={styles.heroTitle}>VLOJ contest</h2>
           <p style={styles.heroSubtitle}>
-            Bắt đầu hành trình của bạn với các khóa học tin học từ cơ bản đến nâng cao, được thiết kế cho tương lai.
+            Thử sức mình với những câu hỏi thật hay!
           </p>
           <button className="ctaButton" style={styles.ctaButton}>Bắt Đầu Ngay</button>
         </section>
@@ -938,28 +938,10 @@ def dijkstra(graph, start):
           </div>
         </section>
 
-        <section id="about" style={styles.aboutSection}>
-            <h3 style={styles.sectionTitle}>Về IT Explorer</h3>
-            <p style={styles.aboutText}>
-                IT Explorer là một nền tảng giáo dục trực tuyến dành riêng cho việc chia sẻ kiến thức về khoa học máy tính và lập trình. Sứ mệnh của chúng tôi là cung cấp các tài nguyên học tập chất lượng cao, dễ tiếp cận cho tất cả mọi người, từ những người mới bắt đầu cho đến các lập trình viên có kinh nghiệm muốn nâng cao kỹ năng. Chúng tôi tin rằng bất kỳ ai cũng có thể học lập trình và tạo ra những sản phẩm công nghệ tuyệt vời.
-            </p>
-        </section>
-
-        <section id="contact" style={styles.contactSection}>
-            <h3 style={styles.sectionTitle}>Liên Hệ Với Chúng Tôi</h3>
-            <p style={styles.contactText}>
-                Nếu bạn có bất kỳ câu hỏi, góp ý hoặc mong muốn hợp tác, đừng ngần ngại liên hệ với chúng tôi.
-            </p>
-            <div style={styles.contactInfo}>
-                <p><strong>Email:</strong> <a href="mailto:contact@itexplorer.dev" style={styles.contactLink}>contact@itexplorer.dev</a></p>
-                <p><strong>Theo dõi chúng tôi trên mạng xã hội:</strong> @ITExplorer</p>
-            </div>
-        </section>
-
       </main>
 
       <footer style={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} IT Explorer. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} IT of Van Lang. All rights reserved.</p>
       </footer>
       <Modal item={selectedItem} onClose={() => setSelectedItem(null)} />
     </div>
@@ -984,9 +966,10 @@ const styles: { [key: string]: React.CSSProperties } = {
     zIndex: 1000,
   },
   logo: {
-    fontSize: '1.8rem',
+    fontSize: '2rem',
     color: '#007aff',
     margin: 0,
+    lineHeight: 1,
   },
   navLink: {
     margin: '0 1rem',
@@ -1031,36 +1014,6 @@ const styles: { [key: string]: React.CSSProperties } = {
   algorithmsSection: {
     padding: '4rem 2rem',
     backgroundColor: '#f8f9fa',
-  },
-  aboutSection: {
-    padding: '4rem 2rem',
-    backgroundColor: '#ffffff',
-  },
-  aboutText: {
-    maxWidth: '800px',
-    margin: '0 auto',
-    textAlign: 'center',
-    fontSize: '1.1rem',
-    lineHeight: '1.8',
-    color: '#555',
-  },
-  contactSection: {
-    padding: '4rem 2rem',
-    backgroundColor: '#f8f9fa',
-    textAlign: 'center',
-  },
-  contactText: {
-    fontSize: '1.1rem',
-    color: '#555',
-    marginBottom: '1.5rem',
-  },
-  contactInfo: {
-    lineHeight: '1.8',
-  },
-  contactLink: {
-    color: '#007aff',
-    textDecoration: 'none',
-    fontWeight: 500,
   },
   sectionTitle: {
     textAlign: 'center',
