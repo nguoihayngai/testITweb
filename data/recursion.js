@@ -1,0 +1,40 @@
+
+export const recursion = {
+  title: 'Đệ Quy',
+  description: 'Nắm vững kỹ thuật giải quyết vấn đề bằng cách chia nhỏ bài toán thành các bài toán con tương tự.',
+  icon: '🔄',
+  content: [
+    { type: 'paragraph', text: 'Đệ quy là một kỹ thuật lập trình trong đó một hàm tự gọi lại chính nó để giải quyết một vấn đề.' },
+    { type: 'heading', level: 4, text: 'Ví dụ: Tính giai thừa' },
+    { type: 'code', snippets: {
+        cpp: `long long factorial(int n) {
+    // Base case
+    if (n == 0) {
+        return 1;
+    }
+    // Recursive case
+    return n * factorial(n - 1);
+}`,
+        javascript: `function factorial(n) {
+  if (n === 0) {
+    return 1; // Base case
+  }
+  return n * factorial(n - 1); // Recursive case
+}`,
+        python: `def factorial(n):
+    if n == 0:
+        return 1  # Base case
+    else:
+        return n * factorial(n - 1) # Recursive case`,
+        java: `public class Recursion {
+    public static long factorial(int n) {
+        if (n == 0) {
+            return 1; // Base case
+        } else {
+            return n * factorial(n - 1); // Recursive case
+        }
+    }
+}`
+    }},
+  ]
+};

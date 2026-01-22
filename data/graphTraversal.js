@@ -1,0 +1,120 @@
+
+export const graphTraversal = {
+  title: 'Duyệt Đồ Thị (BFS & DFS)',
+  description: 'Các phương pháp duyệt qua tất cả các đỉnh của đồ thị. BFS tìm đường đi ngắn nhất trên đồ thị không trọng số.',
+  icon: '🕸️',
+  content: [
+    { type: 'paragraph', text: 'BFS (Breadth-First Search) và DFS (Depth-First Search) là hai thuật toán duyệt đồ thị cơ bản.' },
+    { type: 'heading', level: 4, text: '1. BFS - Tìm kiếm theo chiều rộng' },
+    { type: 'paragraph', text: 'Sử dụng một hàng đợi (Queue) để khám phá các đỉnh kề trước khi đi sâu hơn.' },
+    { type: 'code', snippets: {
+        cpp: `// Assuming graph is represented by std::map<int, std::vector<int>>
+void bfs(int startNode, std::map<int, std::vector<int>>& graph) {
+    std::set<int> visited;
+    std::queue<int> q;
+
+    visited.insert(startNode);
+    q.push(startNode);
+
+    while(!q.empty()) {
+        int node = q.front();
+        q.pop();
+        // Process node
+        for (int neighbor : graph[node]) {
+            if (visited.find(neighbor) == visited.end()) {
+                visited.insert(neighbor);
+                q.push(neighbor);
+            }
+        }
+    }
+}`,
+        javascript: `function bfs(graph, startNode) {
+  const visited = new Set();
+  const queue = [startNode];
+  visited.add(startNode);
+  while (queue.length > 0) {
+    const currentNode = queue.shift();
+    // Process currentNode
+    for (const neighbor of graph[currentNode]) {
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.push(neighbor);
+      }
+    }
+  }
+}`,
+        python: `from collections import deque
+def bfs(graph, start_node):
+    visited = set()
+    queue = deque([start_node])
+    visited.add(start_node)
+    while queue:
+        node = queue.popleft()
+        # Process node
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)`,
+        java: `// Assuming graph is Map<Integer, List<Integer>>
+void bfs(int startNode, Map<Integer, List<Integer>> graph) {
+    Set<Integer> visited = new HashSet<>();
+    Queue<Integer> queue = new LinkedList<>();
+    
+    visited.add(startNode);
+    queue.add(startNode);
+    
+    while (!queue.isEmpty()) {
+        int node = queue.poll();
+        // Process node
+        for (int neighbor : graph.get(node)) {
+            if (!visited.contains(neighbor)) {
+                visited.add(neighbor);
+                queue.add(neighbor);
+            }
+        }
+    }
+}`
+    }},
+    { type: 'heading', level: 4, text: '2. DFS - Tìm kiếm theo chiều sâu' },
+    { type: 'paragraph', text: 'Sử dụng đệ quy (hoặc một ngăn xếp - Stack) để đi sâu nhất có thể vào một nhánh trước khi quay lui.' },
+    { type: 'code', snippets: {
+        cpp: `// Assuming graph representation
+void dfs(int node, std::map<int, std::vector<int>>& graph, std::set<int>& visited) {
+    visited.insert(node);
+    // Process node
+    for (int neighbor : graph[node]) {
+        if (visited.find(neighbor) == visited.end()) {
+            dfs(neighbor, graph, visited);
+        }
+    }
+}`,
+        javascript: `function dfs(graph, startNode, visited = new Set()) {
+  // Process startNode
+  visited.add(startNode);
+  for (const neighbor of graph[startNode]) {
+    if (!visited.has(neighbor)) {
+      dfs(graph, neighbor, visited);
+    }
+  }
+}`,
+        python: `def dfs(graph, node, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(node)
+    # Process node
+    for neighbor in graph[node]:
+        if neighbor not in visited:
+            dfs(graph, neighbor, visited)`,
+        java: `// Assuming graph representation
+void dfs(int node, Map<Integer, List<Integer>> graph, Set<Integer> visited) {
+    visited.add(node);
+    // Process node
+    for (int neighbor : graph.get(node)) {
+        if (!visited.contains(neighbor)) {
+            dfs(neighbor, graph, visited);
+        }
+    }
+}`
+    }},
+  ]
+};
