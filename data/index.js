@@ -4,6 +4,9 @@ import { searching } from './searching.js';
 import { dataStructures } from './dataStructures.js';
 import { recursion } from './recursion.js';
 import { pointers } from './pointers.js';
+import { greedy } from './greedy.js';
+import { divideAndConquer } from './divideAndConquer.js';
+import { backtracking } from './backtracking.js';
 import { dynamicProgramming } from './dynamicProgramming.js';
 import { trees } from './trees.js';
 import { graphTraversal } from './graphTraversal.js';
@@ -15,6 +18,9 @@ export const algorithms = [
   dataStructures,
   recursion,
   pointers,
+  greedy,
+  divideAndConquer,
+  backtracking,
   dynamicProgramming,
   trees,
   graphTraversal,

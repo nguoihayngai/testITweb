@@ -111,9 +111,9 @@ const App = () => {
   );
 };
 
-// FIX: Use 'as const' to ensure correct type inference for CSS properties.
+// FIX: Added 'as const' to ensure correct type inference for CSS properties.
 // This gives each property a literal type (e.g., 'position' becomes 'sticky' instead of 'string'),
-// which helps TypeScript's overload resolution for React.createElement.
+// which helps TypeScript's overload resolution for React.createElement, fixing errors with 'style' and 'href' props.
 const styles = {
   container: {
     display: 'flex',
