@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { algorithms } from './data/index.js';
+import { basics } from './data/basics/index.js';
 
 const CodeBlock = ({ snippets }) => {
   const [lang, setLang] = useState('cpp');
@@ -90,6 +91,18 @@ const App = () => {
         React.createElement('p', { style: styles.heroSubtitle }, 'Thử sức mình với những câu hỏi thật hay!'),
         React.createElement('button', { className: "ctaButton", style: styles.ctaButton }, 'Bắt Đầu Ngay')
       ),
+       React.createElement('section', { style: styles.basicsSection },
+        React.createElement('h3', { style: styles.sectionTitle }, 'Hướng Dẫn Cơ Bản'),
+        React.createElement('div', { style: styles.coursesGrid },
+          basics.map((item, index) =>
+            React.createElement('div', { key: index, className: "courseCard", style: { ...styles.courseCard, cursor: 'pointer' }, onClick: () => setSelectedItem(item) },
+              React.createElement('div', { style: styles.courseIcon }, item.icon),
+              React.createElement('h4', { style: styles.courseTitle }, item.title),
+              React.createElement('p', { style: styles.iconCardDescription }, item.description)
+            )
+          )
+        )
+      ),
       React.createElement('section', { style: styles.algorithmsSection },
         React.createElement('h3', { style: styles.sectionTitle }, 'Hướng Dẫn Thuật Toán'),
         React.createElement('div', { style: styles.coursesGrid },
@@ -174,6 +187,10 @@ const styles = {
     cursor: 'pointer',
     fontWeight: 'bold',
     transition: 'background-color 0.3s, transform 0.2s',
+  },
+  basicsSection: {
+    padding: '4rem 2rem',
+    backgroundColor: '#ffffff',
   },
   algorithmsSection: {
     padding: '4rem 2rem',
