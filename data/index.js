@@ -14,6 +14,7 @@ import { graphTraversal } from './graphTraversal.js';
 import { dijkstra } from './dijkstra.js';
 import { competitiveProgrammingTricks } from './competitiveProgrammingTricks.js';
 import { stlAndStrings } from './stlAndStrings.js';
+import { lis } from './lis.js';
 
 export const algorithms = [
   competitiveProgrammingTricks,
@@ -28,6 +29,7 @@ export const algorithms = [
   divideAndConquer,
   backtracking,
   dynamicProgramming,
+  lis,
   trees,
   graphTraversal,
   dijkstra,
