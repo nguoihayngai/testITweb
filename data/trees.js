@@ -11,14 +11,14 @@ export const trees = {
     int key;
     Node *left, *right;
 };
-// Function to create a new BST node
+// Hàm tạo một nút BST mới
 Node* newNode(int item) {
     Node* temp = new Node;
     temp->key = item;
     temp->left = temp->right = nullptr;
     return temp;
 }
-// Function to insert a new node
+// Hàm chèn một nút mới
 Node* insert(Node* node, int key) {
     if (node == nullptr) return newNode(key);
     if (key < node->key)
@@ -32,7 +32,7 @@ Node* insert(Node* node, int key) {
 }
 class BinarySearchTree {
   constructor() { this.root = null; }
-  insert(value) { /* ... implementation ... */ }
+  insert(value) { /* ... chi tiết cài đặt ... */ }
 }`,
         python: `class Node:
     def __init__(self, key):
@@ -52,7 +52,7 @@ def insert(root, key):
         java: `class Node {
     int key;
     Node left, right;
-    public Node(item) { key = item; left = right = null; }
+    public Node(int item) { key = item; left = right = null; }
 }
 class BinarySearchTree {
     Node root;

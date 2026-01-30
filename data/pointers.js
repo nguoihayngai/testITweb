@@ -12,33 +12,33 @@ using namespace std;
 
 int main() {
     int var = 20;
-    int* ptr = &var; // ptr stores the address of var
+    int* ptr = &var; // ptr lưu địa chỉ của var
     
-    // cout << "Value of var: " << *ptr;
-    *ptr = 30; // Change value at address
-    // cout << "New value of var: " << var;
+    // cout << "Giá trị của var: " << *ptr;
+    *ptr = 30; // Thay đổi giá trị tại địa chỉ
+    // cout << "Giá trị mới của var: " << var;
     return 0;
 }`,
         javascript: `let obj1 = { name: "Alice" };
-let obj2 = obj1; // obj2 references the same object
+let obj2 = obj1; // obj2 tham chiếu đến cùng một đối tượng
 
 obj2.name = "Bob";
 
-console.log(obj1.name); // Output: "Bob"`,
+console.log(obj1.name); // Kết quả: "Bob"`,
         python: `list1 = [1, 2, 3]
-list2 = list1 # Both variables reference the same list
+list2 = list1 # Cả hai biến cùng tham chiếu đến một danh sách
 
 list2.append(4)
 
-print(list1) # Output: [1, 2, 3, 4]`,
+print(list1) # Kết quả: [1, 2, 3, 4]`,
         java: `class Main {
     public static void main(String[] args) {
         StringBuilder str1 = new StringBuilder("Hello");
-        StringBuilder str2 = str1; // Both reference the same object
+        StringBuilder str2 = str1; // Cả hai cùng tham chiếu đến một đối tượng
         
         str2.append(" World");
         
-        System.out.println(str1); // Output: Hello World
+        System.out.println(str1); // Kết quả: Hello World
     }
 }`
     }},

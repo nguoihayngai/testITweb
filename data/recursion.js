@@ -8,30 +8,30 @@ export const recursion = {
     { type: 'heading', level: 4, text: 'Ví dụ: Tính giai thừa' },
     { type: 'code', snippets: {
         cpp: `long long factorial(int n) {
-    // Base case
+    // Trường hợp cơ sở
     if (n == 0) {
         return 1;
     }
-    // Recursive case
+    // Trường hợp đệ quy
     return n * factorial(n - 1);
 }`,
         javascript: `function factorial(n) {
   if (n === 0) {
-    return 1; // Base case
+    return 1; // Trường hợp cơ sở
   }
-  return n * factorial(n - 1); // Recursive case
+  return n * factorial(n - 1); // Trường hợp đệ quy
 }`,
         python: `def factorial(n):
     if n == 0:
-        return 1  # Base case
+        return 1  # Trường hợp cơ sở
     else:
-        return n * factorial(n - 1) # Recursive case`,
+        return n * factorial(n - 1) # Trường hợp đệ quy`,
         java: `public class Recursion {
     public static long factorial(int n) {
         if (n == 0) {
-            return 1; // Base case
+            return 1; // Trường hợp cơ sở
         } else {
-            return n * factorial(n - 1); // Recursive case
+            return n * factorial(n - 1); // Trường hợp đệ quy
         }
     }
 }`

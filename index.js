@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { algorithms } from './data/index.js';
 import { basics } from './data/basics/index.js';
 import { math } from './data/math/index.js';
+import { contests } from './data/contests/index.js';
 
 const CodeBlock = ({ snippets }) => {
   const [lang, setLang] = useState('cpp');
@@ -67,6 +68,7 @@ const App = () => {
     { id: 'basics', title: 'Cơ Bản' },
     { id: 'math', title: 'Toán Học' },
     { id: 'algorithms', title: 'Thuật Toán' },
+    { id: 'contests', title: 'Bài Toán' },
     { id: 'vloj', title: 'VLOJ' },
   ];
 
@@ -79,6 +81,7 @@ const App = () => {
     basics: { title: 'Hướng Dẫn Cơ Bản', items: basics, style: styles.basicsSection },
     math: { title: 'Toán Học Thi Đấu', items: math, style: styles.mathSection },
     algorithms: { title: 'Hướng Dẫn Thuật Toán', items: algorithms, style: styles.algorithmsSection },
+    contests: { title: 'Giải Các Bài Toán Kinh Điển', items: contests, style: styles.algorithmsSection },
   };
 
   const CurrentPageContent = () => {
@@ -108,9 +111,18 @@ const App = () => {
         React.createElement('section', { id: "hero", className: "hero", style: styles.hero },
           React.createElement('h2', { className: "heroTitle", style: styles.heroTitle }, 'VLOJ contest'),
           React.createElement('p', { style: styles.heroSubtitle }, 'Thử sức mình với những câu hỏi thật hay!'),
-          React.createElement('button', { className: "ctaButton", style: styles.ctaButton }, 'Bắt Đầu Ngay')
+          React.createElement('div', { style: styles.ctaButtonContainer },
+            React.createElement('button', { className: "ctaButton", style: styles.ctaButton, onClick: () => setView({ page: 'contests', topic: null }) }, 'Bắt Đầu Ngay'),
+            React.createElement('button', {
+              className: "secondaryCtaButton",
+              style: styles.secondaryCtaButton,
+              onClick: () => {
+                document.getElementById('explore-topics').scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 'Khám Phá Chủ Đề')
+          )
         ),
-        React.createElement('section', { className: 'contentSection', style: styles.basicsSection },
+        React.createElement('section', { id: 'explore-topics', className: 'contentSection', style: styles.basicsSection },
           React.createElement('h3', { className: "sectionTitle", style: styles.sectionTitle }, 'Khám Phá Các Chủ Đề'),
           React.createElement('div', { className: "coursesGrid", style: styles.coursesGrid },
             homePageCategories.map((item, index) =>
@@ -125,6 +137,13 @@ const App = () => {
                 React.createElement('p', { style: styles.iconCardDescription }, item.description)
               )
             )
+          ),
+          React.createElement('div', { style: styles.extraCtaContainer },
+            React.createElement('button', {
+              className: "ctaButton",
+              style: styles.ctaButton,
+              onClick: () => setView({ page: 'contests', topic: null })
+            }, 'Tới Trang Bài Toán')
           )
         )
       );
@@ -178,7 +197,11 @@ const App = () => {
   return React.createElement('div', { style: styles.container },
     React.createElement(MobileMenu),
     React.createElement('header', { style: styles.header },
-      React.createElement('h1', { className: "logo", style: styles.logo },
+      React.createElement('h1', {
+        className: "logo",
+        style: styles.logo,
+        onClick: () => setView({ page: 'home', topic: null })
+      },
         'IT',
         React.createElement('span', { style: { fontSize: 'calc(2rem * 2 / 5)', fontWeight: 400, marginLeft: '2px' } }, 'of Van Lang')
       ),
@@ -232,6 +255,7 @@ const styles = {
     lineHeight: 1,
     display: 'flex',
     alignItems: 'baseline',
+    cursor: 'pointer',
   },
   navLink: {
     margin: '0 1rem',
@@ -283,6 +307,24 @@ const styles = {
     cursor: 'pointer',
     fontWeight: 'bold',
     transition: 'background-color 0.3s, transform 0.2s',
+  },
+  ctaButtonContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '1rem',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+  },
+  secondaryCtaButton: {
+    padding: '0.8rem 2rem',
+    fontSize: '1rem',
+    color: '#007aff',
+    backgroundColor: 'transparent',
+    border: '2px solid #007aff',
+    borderRadius: '50px',
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    transition: 'background-color 0.3s, color 0.3s, transform 0.2s',
   },
   basicsSection: {
     padding: '4rem 2rem',
@@ -432,7 +474,11 @@ const styles = {
     fontSize: '3rem',
     cursor: 'pointer',
     color: '#333',
-  }
+  },
+  extraCtaContainer: {
+    textAlign: 'center',
+    marginTop: '4rem',
+  },
 };
 
 const DynamicStyles = () => {
@@ -446,6 +492,12 @@ const DynamicStyles = () => {
       
       .ctaButton:hover {
         background-color: #0056b3 !important;
+        transform: translateY(-2px);
+      }
+
+      .secondaryCtaButton:hover {
+        background-color: #007aff !important;
+        color: #fff !important;
         transform: translateY(-2px);
       }
     

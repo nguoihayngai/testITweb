@@ -12,7 +12,7 @@ export const dijkstra = {
 #include <limits.h>
 using namespace std;
 
-// Using a priority queue for efficiency
+// Dùng hàng đợi ưu tiên để tăng hiệu quả
 void dijkstra(int src, int V, vector<pair<int, int>> adj[]) {
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
     vector<int> dist(V, INT_MAX);
@@ -33,18 +33,18 @@ void dijkstra(int src, int V, vector<pair<int, int>> adj[]) {
             }
         }
     }
-    // 'dist' array now contains shortest paths from src
+    // Mảng 'dist' bây giờ chứa đường đi ngắn nhất từ src
 }`,
-        javascript: `// A full implementation requires a Priority Queue library or custom implementation
+        javascript: `// Cài đặt đầy đủ cần thư viện Hàng Đợi Ưu Tiên hoặc tự cài đặt
 function dijkstra(graph, startNode) {
-  // 1. Initialize distances with Infinity, 0 for startNode
-  // 2. Use a Priority Queue to store [distance, node]
-  // 3. While PQ is not empty:
-  //    a. Get node with smallest distance
-  //    b. For each neighbor:
-  //       - Calculate new distance
-  //       - If new distance is shorter, update and add to PQ
-  // 4. Return distances
+  // 1. Khởi tạo khoảng cách là Vô cực, 0 cho nút bắt đầu
+  // 2. Dùng Hàng Đợi Ưu Tiên để lưu [khoảng cách, nút]
+  // 3. Khi PQ chưa rỗng:
+  //    a. Lấy nút có khoảng cách nhỏ nhất
+  //    b. Với mỗi nút kề:
+  //       - Tính khoảng cách mới
+  //       - Nếu khoảng cách mới ngắn hơn, cập nhật và thêm vào PQ
+  // 4. Trả về các khoảng cách
 }`,
         python: `import heapq
 
@@ -65,16 +65,16 @@ def dijkstra(graph, start):
                 distances[neighbor] = distance
                 heapq.heappush(pq, (distance, neighbor))
     return distances`,
-        java: `// A full implementation requires a PriorityQueue
-// and a graph representation (e.g., Adjacency List)
-// Pseudo-code:
-// 1. Create a dist[] array, initialized to infinity.
-// 2. Create a PriorityQueue of pairs (distance, vertex).
-// 3. Add (0, source) to PQ. dist[source] = 0.
-// 4. Loop while PQ is not empty:
-//    a. Extract vertex 'u' with minimum distance.
-//    b. For each adjacent vertex 'v' of 'u':
-//       - If dist[u] + weight < dist[v], update dist[v] and add to PQ.`
+        java: `// Cài đặt đầy đủ cần một PriorityQueue
+// và một cách biểu diễn đồ thị (ví dụ: Danh sách kề)
+// Mã giả:
+// 1. Tạo mảng dist[], khởi tạo là vô cực.
+// 2. Tạo một PriorityQueue chứa các cặp (khoảng cách, đỉnh).
+// 3. Thêm (0, nguồn) vào PQ. dist[nguồn] = 0.
+// 4. Lặp khi PQ chưa rỗng:
+//    a. Lấy đỉnh 'u' có khoảng cách nhỏ nhất.
+//    b. Với mỗi đỉnh kề 'v' của 'u':
+//       - Nếu dist[u] + trọng số < dist[v], cập nhật dist[v] và thêm vào PQ.`
     }},
   ]
 };

@@ -16,8 +16,8 @@ int main() {
     stack<int> s;
     s.push(1);
     s.push(2);
-    s.pop(); // Removes 2
-    // cout << s.top(); // Accesses 1
+    s.pop(); // Xóa 2
+    // cout << s.top(); // Truy cập 1
     return 0;
 }`,
         javascript: `class Stack {
@@ -30,15 +30,15 @@ int main() {
         python: `stack = []
 stack.append(1)
 stack.append(2)
-stack.pop() # Returns 2
-# Top element is stack[-1]`,
+stack.pop() # Trả về 2
+# Phần tử trên cùng là stack[-1]`,
         java: `import java.util.Stack;
 
 Stack<Integer> stack = new Stack<>();
 stack.push(1);
 stack.push(2);
-stack.pop(); // returns 2
-// stack.peek(); // returns 1`
+stack.pop(); // trả về 2
+// stack.peek(); // trả về 1`
     }},
     { type: 'heading', level: 4, text: '2. Queue (Hàng đợi - FIFO)' },
     { type: 'paragraph', text: 'Hoạt động theo nguyên tắc "Vào trước, ra trước" (First-In, First-Out).' },
@@ -49,10 +49,10 @@ using namespace std;
 
 int main() {
     queue<int> q;
-    q.push(1); // Add 1
-    q.push(2); // Add 2
-    q.pop();   // Removes 1
-    // cout << q.front(); // Accesses 2
+    q.push(1); // Thêm 1
+    q.push(2); // Thêm 2
+    q.pop();   // Xóa 1
+    // cout << q.front(); // Truy cập 2
     return 0;
 }`,
         javascript: `class Queue {
@@ -67,15 +67,15 @@ int main() {
 queue = deque()
 queue.append(1)
 queue.append(2)
-queue.popleft() # Returns 1`,
+queue.popleft() # Trả về 1`,
         java: `import java.util.LinkedList;
 import java.util.Queue;
 
 Queue<Integer> queue = new LinkedList<>();
 queue.add(1);
 queue.add(2);
-queue.remove(); // returns 1
-// queue.peek(); // returns 2`
+queue.remove(); // trả về 1
+// queue.peek(); // trả về 2`
     }},
   ]
 };

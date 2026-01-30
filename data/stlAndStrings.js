@@ -41,7 +41,7 @@ int main() {
     // }
 
     if (s.count(20)) {
-        // cout << "\\nTim thay 20 trong set." << endl;
+        // cout << "\\nTìm thấy 20 trong set." << endl;
     }
 
     s.erase(10); // Xóa phần tử 10
@@ -49,7 +49,7 @@ int main() {
 }`}},
     { type: 'heading', level: 4, text: '3. Nhập Xâu Có Dấu Cách (getline)' },
     { type: 'paragraph', text: 'Khi sử dụng `cin`, nó sẽ dừng đọc khi gặp khoảng trắng. Để đọc cả một dòng văn bản (bao gồm cả dấu cách), hãy dùng `getline(cin, ten_bien_xau)`. Lưu ý: sau khi dùng `cin` để đọc số, bộ đệm có thể còn lại ký tự xuống dòng. Ta cần dùng `cin.ignore()` để xóa nó trước khi dùng `getline`.' },
-    { type:-`code`, snippets: { cpp: `#include <iostream>
+    { type: 'code', snippets: { cpp: `#include <iostream>
 #include <string>
 using namespace std;
 
@@ -57,18 +57,18 @@ int main() {
     int n;
     string s;
 
-    // cout << "Nhap so: ";
+    // cout << "Nhập số: ";
     cin >> n;
 
     // Vấn đề: cin để lại ký tự '\\n' trong buffer
     // Giải pháp: Xóa ký tự thừa trước khi đọc xâu
     cin.ignore(); 
 
-    // cout << "Nhap xau: ";
+    // cout << "Nhập xâu: ";
     getline(cin, s);
 
-    // cout << "So da nhap: " << n << endl;
-    // cout << "Xau da nhap: " << s << endl;
+    // cout << "Số đã nhập: " << n << endl;
+    // cout << "Xâu đã nhập: " << s << endl;
     return 0;
 }`}},
     { type: 'heading', level: 4, text: '4. Tách Từ Dùng stringstream' },

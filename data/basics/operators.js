@@ -37,30 +37,30 @@ int du = a % b;     // 1`
     { type: 'paragraph', text: 'Dùng để so sánh hai giá trị, kết quả trả về là `true` (đúng) hoặc `false` (sai).' },
     { type: 'code', snippets: {
         cpp: `int x = 5, y = 10;
-bool ketQua1 = (x == 5); // true
-bool ketQua2 = (x != y); // true
-bool ketQua3 = (y > x);  // true`,
+bool ketQua1 = (x == 5); // đúng
+bool ketQua2 = (x != y); // đúng
+bool ketQua3 = (y > x);  // đúng`,
         javascript: `let x = 5, y = 10;
-let ketQua1 = (x === 5); // true (=== so sánh cả giá trị và kiểu)
-let ketQua2 = (x !== y); // true
-let ketQua3 = (y > x);   // true`,
+let ketQua1 = (x === 5); // đúng (=== so sánh cả giá trị và kiểu)
+let ketQua2 = (x !== y); // đúng
+let ketQua3 = (y > x);   // đúng`,
         python: `x, y = 5, 10
-ket_qua1 = (x == 5)  # True
-ket_qua2 = (x != y)  # True
-ket_qua3 = (y > x)   # True`,
+ket_qua1 = (x == 5)  # Đúng
+ket_qua2 = (x != y)  # Đúng
+ket_qua3 = (y > x)   # Đúng`,
         java: `int x = 5, y = 10;
-boolean ketQua1 = (x == 5); // true
-boolean ketQua2 = (x != y); // true
-boolean ketQua3 = (y > x);  // true`
+boolean ketQua1 = (x == 5); // đúng
+boolean ketQua2 = (x != y); // đúng
+boolean ketQua3 = (y > x);  // đúng`
     }},
     { type: 'heading', level: 4, text: 'Toán tử logic' },
     { type: 'paragraph', text: 'Dùng để kết hợp các biểu thức điều kiện.\n• AND (&&): `true` nếu tất cả đều `true`.\n• OR (||): `true` nếu ít nhất một biểu thức là `true`.\n• NOT (!): Đảo ngược giá trị logic.' },
     { type: 'code', snippets: {
         cpp: `bool troiDep = true;
 bool coThoiGian = false;
-// (troiDep && coThoiGian) -> false
-// (troiDep || coThoiGian) -> true
-// !troiDep -> false`,
+// (troiDep && coThoiGian) -> sai
+// (troiDep || coThoiGian) -> đúng
+// !troiDep -> sai`,
         javascript: `let troiDep = true;
 let coThoiGian = false;
 // (troiDep && coThoiGian) -> false
@@ -69,9 +69,9 @@ let coThoiGian = false;
         python: `# Python dùng 'and', 'or', 'not'
 troi_dep = True
 co_thoi_gian = False
-# (troi_dep and co_thoi_gian) -> False
-# (troi_dep or co_thoi_gian) -> True
-# not troi_dep -> False`,
+# (troi_dep and co_thoi_gian) -> Sai
+# (troi_dep or co_thoi_gian) -> Đúng
+# not troi_dep -> Sai`,
         java: `boolean troiDep = true;
 boolean coThoiGian = false;
 // (troiDep && coThoiGian) -> false

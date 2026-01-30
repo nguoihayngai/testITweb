@@ -9,7 +9,7 @@ export const sorting = {
     { type: 'paragraph', text: 'Duyệt qua danh sách nhiều lần, so sánh và đổi chỗ các cặp phần tử liền kề nếu chúng sai thứ tự. Độ phức tạp: O(n²).' },
     { type: 'code', snippets: {
         cpp: `#include <vector>
-#include <utility> // for std::swap
+#include <utility> // Cần cho std::swap
 using namespace std;
 
 void bubbleSort(vector<int>& arr) {
@@ -114,7 +114,7 @@ void insertionSort(vector<int>& arr) {
 using namespace std;
 
 void merge(vector<int>& arr, int l, int m, int r) {
-    // Implementation details...
+    // Chi tiết cài đặt...
 }
 
 void mergeSort(vector<int>& arr, int l, int r) {
@@ -122,10 +122,10 @@ void mergeSort(vector<int>& arr, int l, int r) {
         int m = l + (r - l) / 2;
         mergeSort(arr, l, m);
         mergeSort(arr, m + 1, r);
-        // merge(arr, l, m, r); // Function to merge sorted halves
+        // merge(arr, l, m, r); // Hàm để trộn các nửa đã sắp xếp
     }
 }
-// Note: Full implementation is longer.`,
+// Lưu ý: Cài đặt đầy đủ sẽ dài hơn.`,
         javascript: `function mergeSort(arr) {
   if (arr.length <= 1) return arr;
   
@@ -150,7 +150,7 @@ function merge(left, right) {
         R = arr[mid:]
         merge_sort(L)
         merge_sort(R)
-        # Merging logic...
+        # Logic trộn...
         i = j = k = 0
         while i < len(L) and j < len(R):
             if L[i] < R[j]:
@@ -160,7 +160,7 @@ function merge(left, right) {
                 arr[k] = R[j]
                 j += 1
             k += 1
-        # Checking if any element was left
+        # Kiểm tra xem còn phần tử nào không
         while i < len(L):
             arr[k] = L[i]
             i += 1

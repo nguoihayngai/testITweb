@@ -60,8 +60,8 @@ map<int, int> primeFactorize(int n) {
     { type: 'code', snippets: {
         cpp: `#include <numeric> // Cần thiết cho std::gcd và std::lcm
 #include <iostream>
-#include <cmath> // for std::abs
-#include <utility> // for std::swap
+#include <cmath> // Cần cho std::abs
+#include <utility> // Cần cho std::swap
 using namespace std;
 
 // Cách tự cài đặt (thuật toán Euclid)
@@ -80,8 +80,8 @@ long long custom_lcm(long long a, long long b) {
 // Sử dụng hàm có sẵn (từ C++17)
 void use_builtin_functions() {
     long long a = 48, b = 18;
-    // cout << "GCD cua " << a << " va " << b << " la: " << gcd(a, b) << endl; // Output: 6
-    // cout << "LCM cua " << a << " va " << b << " la: " << lcm(a, b) << endl; // Output: 144
+    // cout << "GCD cua " << a << " va " << b << " la: " << gcd(a, b) << endl; // Kết quả: 6
+    // cout << "LCM cua " << a << " va " << b << " la: " << lcm(a, b) << endl; // Kết quả: 144
 }`,
         javascript: `function gcd(a, b) {
   while (b) { [a, b] = [b, a % b]; }

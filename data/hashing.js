@@ -28,13 +28,13 @@ const freqMap = new Map();
 for (const num of nums) {
   freqMap.set(num, (freqMap.get(num) || 0) + 1);
 }
-// freqMap is now Map { 1 => 2, 2 => 2, 3 => 3 }
+// freqMap bây giờ là Map { 1 => 2, 2 => 2, 3 => 3 }
 // console.log("Số lần xuất hiện của số 3:", freqMap.get(3)); // 3`,
         python: `nums = [1, 2, 2, 3, 1, 3, 3]
 freq_map = {}
 for num in nums:
     freq_map[num] = freq_map.get(num, 0) + 1
-# freq_map is now {1: 2, 2: 2, 3: 3}
+# freq_map bây giờ là {1: 2, 2: 2, 3: 3}
 # print(f"Số lần xuất hiện của số 3: {freq_map[3]}") # 3`,
         java: `import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +44,7 @@ Map<Integer, Integer> freqMap = new HashMap<>();
 for (int num : nums) {
     freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
 }
-// freqMap is now {1=2, 2=2, 3=3}
+// freqMap bây giờ là {1=2, 2=2, 3=3}
 // System.out.println("Số lần xuất hiện của số 3: " + freqMap.get(3)); // 3`
     }},
     { type: 'heading', level: 4, text: 'Ứng dụng 2: Bài toán Two Sum' },
@@ -96,7 +96,7 @@ public int[] twoSum(int[] nums, int target) {
         }
         map.put(nums[i], i);
     }
-    throw new IllegalArgumentException("No two sum solution");
+    throw new IllegalArgumentException("Không tìm thấy giải pháp two sum");
 }`
     }},
   ]

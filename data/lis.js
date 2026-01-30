@@ -37,7 +37,7 @@ int lis_n2(const vector<int>& a) {
     { type: 'paragraph', text: 'Cách tiếp cận này hiệu quả hơn. Ta duy trì một mảng `tails`, trong đó `tails[i]` là phần tử cuối cùng nhỏ nhất của một dãy con tăng có độ dài `i+1`. Khi duyệt qua mảng, với mỗi phần tử `x`, ta tìm vị trí có thể chèn `x` vào `tails` để duy trì tính trật tự của nó bằng tìm kiếm nhị phân. Nếu `x` lớn hơn tất cả các phần tử trong `tails`, ta mở rộng `tails` ra.' },
     { type: 'code', snippets: {
         cpp: `#include <vector>
-#include <algorithm> // for lower_bound
+#include <algorithm> // Cần cho lower_bound
 using namespace std;
 
 int lis_nlogn(const vector<int>& a) {

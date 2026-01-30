@@ -95,7 +95,7 @@ bool solveNQUtil(int board[N][N], int col) {
                 if (solveNQUtil(board, col + 1, N))
                     return true;
                 
-                board[i][col] = 0; // BACKTRACK
+                board[i][col] = 0; // QUAY LUI
             }
         }
         return false;

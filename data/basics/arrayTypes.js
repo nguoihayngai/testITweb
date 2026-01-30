@@ -26,18 +26,18 @@ int main() {
     // cout << soNguyen[0]; // Truy cập phần tử đầu tiên (5)
     return 0;
 }`,
-        javascript: `// JavaScript arrays are dynamic by default
+        javascript: `// Mảng trong JavaScript mặc định là mảng động
 let diem = [8, 9, 10];
-diem.push(7); // Thêm phần tử vào cuối, diem becomes [8, 9, 10, 7]
+diem.push(7); // Thêm phần tử vào cuối, diem trở thành [8, 9, 10, 7]
 // console.log(diem[0]); // 8`,
-        python: `# Python lists are dynamic
+        python: `# List trong Python là mảng động
 diem = [8, 9, 10]
-diem.append(7) # Thêm phần tử vào cuối, diem becomes [8, 9, 10, 7]
+diem.append(7) # Thêm phần tử vào cuối, diem trở thành [8, 9, 10, 7]
 # print(diem[0]) # 8`,
-        java: `// Static array
+        java: `// Mảng tĩnh
 int[] diem = {8, 9, 10};
 
-// For dynamic arrays, use ArrayList
+// Đối với mảng động, sử dụng ArrayList
 import java.util.ArrayList;
 ArrayList<Integer> soNguyen = new ArrayList<>();
 soNguyen.add(5);

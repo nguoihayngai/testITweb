@@ -14,7 +14,7 @@ export const graphTraversal = {
 #include <queue>
 using namespace std;
 
-// Assuming graph is represented by map<int, vector<int>>
+// Giả sử đồ thị được biểu diễn bằng map<int, vector<int>>
 void bfs(int startNode, map<int, vector<int>>& graph) {
     set<int> visited;
     queue<int> q;
@@ -25,7 +25,7 @@ void bfs(int startNode, map<int, vector<int>>& graph) {
     while(!q.empty()) {
         int node = q.front();
         q.pop();
-        // Process node
+        // Xử lý nút
         for (int neighbor : graph[node]) {
             if (visited.find(neighbor) == visited.end()) {
                 visited.insert(neighbor);
@@ -40,7 +40,7 @@ void bfs(int startNode, map<int, vector<int>>& graph) {
   visited.add(startNode);
   while (queue.length > 0) {
     const currentNode = queue.shift();
-    // Process currentNode
+    // Xử lý currentNode
     for (const neighbor of graph[currentNode]) {
       if (!visited.has(neighbor)) {
         visited.add(neighbor);
@@ -56,12 +56,12 @@ def bfs(graph, start_node):
     visited.add(start_node)
     while queue:
         node = queue.popleft()
-        # Process node
+        # Xử lý nút
         for neighbor in graph[node]:
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.append(neighbor)`,
-        java: `// Assuming graph is Map<Integer, List<Integer>>
+        java: `// Giả sử đồ thị là Map<Integer, List<Integer>>
 void bfs(int startNode, Map<Integer, List<Integer>> graph) {
     Set<Integer> visited = new HashSet<>();
     Queue<Integer> queue = new LinkedList<>();
@@ -71,7 +71,7 @@ void bfs(int startNode, Map<Integer, List<Integer>> graph) {
     
     while (!queue.isEmpty()) {
         int node = queue.poll();
-        // Process node
+        // Xử lý nút
         for (int neighbor : graph.get(node)) {
             if (!visited.contains(neighbor)) {
                 visited.add(neighbor);
@@ -89,10 +89,10 @@ void bfs(int startNode, Map<Integer, List<Integer>> graph) {
 #include <set>
 using namespace std;
 
-// Assuming graph representation
+// Giả sử biểu diễn đồ thị
 void dfs(int node, map<int, vector<int>>& graph, set<int>& visited) {
     visited.insert(node);
-    // Process node
+    // Xử lý nút
     for (int neighbor : graph[node]) {
         if (visited.find(neighbor) == visited.end()) {
             dfs(neighbor, graph, visited);
@@ -100,7 +100,7 @@ void dfs(int node, map<int, vector<int>>& graph, set<int>& visited) {
     }
 }`,
         javascript: `function dfs(graph, startNode, visited = new Set()) {
-  // Process startNode
+  // Xử lý startNode
   visited.add(startNode);
   for (const neighbor of graph[startNode]) {
     if (!visited.has(neighbor)) {
@@ -112,14 +112,14 @@ void dfs(int node, map<int, vector<int>>& graph, set<int>& visited) {
     if visited is None:
         visited = set()
     visited.add(node)
-    # Process node
+    # Xử lý nút
     for neighbor in graph[node]:
         if neighbor not in visited:
             dfs(graph, neighbor, visited)`,
-        java: `// Assuming graph representation
+        java: `// Giả sử biểu diễn đồ thị
 void dfs(int node, Map<Integer, List<Integer>> graph, Set<Integer> visited) {
     visited.add(node);
-    // Process node
+    // Xử lý nút
     for (int neighbor : graph.get(node)) {
         if (!visited.contains(neighbor)) {
             dfs(neighbor, graph, visited);
