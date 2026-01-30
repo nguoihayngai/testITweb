@@ -10,10 +10,11 @@ export const greedy = {
     { type: 'code', snippets: {
         cpp: `#include <vector>
 #include <algorithm>
+using namespace std;
 
-int coinChange(std::vector<int>& coins, int amount) {
+int coinChange(vector<int>& coins, int amount) {
     // Sắp xếp mệnh giá giảm dần để tiếp cận tham lam
-    std::sort(coins.rbegin(), coins.rend());
+    sort(coins.rbegin(), coins.rend());
     int count = 0;
     for (int coin : coins) {
         if (amount <= 0) break;

@@ -8,14 +8,15 @@ export const pointers = {
     { type: 'heading', level: 4, text: 'Ví dụ: Con trỏ (C++) vs Tham chiếu (JS)' },
     { type: 'code', snippets: {
         cpp: `#include <iostream>
+using namespace std;
 
 int main() {
     int var = 20;
     int* ptr = &var; // ptr stores the address of var
     
-    // std::cout << "Value of var: " << *ptr;
+    // cout << "Value of var: " << *ptr;
     *ptr = 30; // Change value at address
-    // std::cout << "New value of var: " << var;
+    // cout << "New value of var: " << var;
     return 0;
 }`,
         javascript: `let obj1 = { name: "Alice" };

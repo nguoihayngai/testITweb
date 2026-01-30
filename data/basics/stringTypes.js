@@ -10,15 +10,16 @@ export const stringTypes = {
     { type: 'code', snippets: {
         cpp: `#include <string>
 #include <iostream>
+using namespace std;
 
 int main() {
-    std::string loiChao = "Xin chào";
-    std::string ten = "Văn Lang";
-    std::string full = loiChao + ", " + ten + "!"; // Nối xâu
+    string loiChao = "Xin chào";
+    string ten = "Văn Lang";
+    string full = loiChao + ", " + ten + "!"; // Nối xâu
     
-    // std::cout << "Độ dài: " << full.length() << std::endl; // 19
-    // std::cout << "Ký tự đầu tiên: " << full[0] << std::endl; // X
-    // std::cout << "Xâu con: " << full.substr(0, 8) << std::endl; // Xin chào
+    // cout << "Độ dài: " << full.length() << endl; // 19
+    // cout << "Ký tự đầu tiên: " << full[0] << endl; // X
+    // cout << "Xâu con: " << full.substr(0, 8) << endl; // Xin chào
     return 0;
 }`,
         javascript: `let loiChao = "Xin chào";

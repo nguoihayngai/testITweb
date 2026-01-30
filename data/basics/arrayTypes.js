@@ -12,17 +12,18 @@ export const arrayTypes = {
     { type: 'code', snippets: {
         cpp: `#include <vector>
 #include <iostream>
+using namespace std;
 
 int main() {
     // Mảng tĩnh
     int diem[3] = {8, 9, 10}; 
     
     // Mảng động (vector)
-    std::vector<int> soNguyen;
+    vector<int> soNguyen;
     soNguyen.push_back(5);    // Thêm 5 vào cuối
     soNguyen.push_back(10);   // Dãy số là {5, 10}
     
-    // std::cout << soNguyen[0]; // Truy cập phần tử đầu tiên (5)
+    // cout << soNguyen[0]; // Truy cập phần tử đầu tiên (5)
     return 0;
 }`,
         javascript: `// JavaScript arrays are dynamic by default

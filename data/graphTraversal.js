@@ -8,10 +8,16 @@ export const graphTraversal = {
     { type: 'heading', level: 4, text: '1. BFS - Tìm kiếm theo chiều rộng' },
     { type: 'paragraph', text: 'Sử dụng một hàng đợi (Queue) để khám phá các đỉnh kề trước khi đi sâu hơn.' },
     { type: 'code', snippets: {
-        cpp: `// Assuming graph is represented by std::map<int, std::vector<int>>
-void bfs(int startNode, std::map<int, std::vector<int>>& graph) {
-    std::set<int> visited;
-    std::queue<int> q;
+        cpp: `#include <map>
+#include <vector>
+#include <set>
+#include <queue>
+using namespace std;
+
+// Assuming graph is represented by map<int, vector<int>>
+void bfs(int startNode, map<int, vector<int>>& graph) {
+    set<int> visited;
+    queue<int> q;
 
     visited.insert(startNode);
     q.push(startNode);
@@ -78,8 +84,13 @@ void bfs(int startNode, Map<Integer, List<Integer>> graph) {
     { type: 'heading', level: 4, text: '2. DFS - Tìm kiếm theo chiều sâu' },
     { type: 'paragraph', text: 'Sử dụng đệ quy (hoặc một ngăn xếp - Stack) để đi sâu nhất có thể vào một nhánh trước khi quay lui.' },
     { type: 'code', snippets: {
-        cpp: `// Assuming graph representation
-void dfs(int node, std::map<int, std::vector<int>>& graph, std::set<int>& visited) {
+        cpp: `#include <map>
+#include <vector>
+#include <set>
+using namespace std;
+
+// Assuming graph representation
+void dfs(int node, map<int, vector<int>>& graph, set<int>& visited) {
     visited.insert(node);
     // Process node
     for (int neighbor : graph[node]) {

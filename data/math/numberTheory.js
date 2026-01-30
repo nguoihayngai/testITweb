@@ -20,8 +20,10 @@ export const numberTheory = {
     { type: 'paragraph', text: 'Là một thuật toán rất hiệu quả để tìm tất cả các số nguyên tố nhỏ hơn hoặc bằng một số `N` cho trước. Thuật toán hoạt động bằng cách loại bỏ các bội số của các số nguyên tố tìm được. Độ phức tạp là O(N log log N).' },
     { type: 'code', snippets: {
         cpp: `#include <vector>
+using namespace std;
+
 void sieve(int n) {
-    std::vector<bool> is_prime(n + 1, true);
+    vector<bool> is_prime(n + 1, true);
     is_prime[0] = is_prime[1] = false;
     for (int p = 2; p * p <= n; p++) {
         if (is_prime[p]) {
@@ -37,8 +39,10 @@ void sieve(int n) {
     { type: 'code', snippets: {
         cpp: `#include <vector>
 #include <map>
-std::map<int, int> primeFactorize(int n) {
-    std::map<int, int> factors;
+using namespace std;
+
+map<int, int> primeFactorize(int n) {
+    map<int, int> factors;
     for (int i = 2; i * i <= n; i++) {
         while (n % i == 0) {
             factors[i]++;
@@ -52,19 +56,32 @@ std::map<int, int> primeFactorize(int n) {
 }`
     }},
     { type: 'heading', level: 4, text: '4. Ước Chung Lớn Nhất (GCD) & Bội Chung Nhỏ Nhất (LCM)' },
-    { type: 'paragraph', text: 'GCD của hai số a, b là số lớn nhất cùng chia hết cả a và b. Thuật toán Euclid là cách hiệu quả nhất để tìm GCD. Bội chung nhỏ nhất (LCM) có thể được tính thông qua GCD bằng công thức: `LCM(a, b) = (|a * b|) / GCD(a, b)`.' },
+    { type: 'paragraph', text: 'GCD của hai số a, b là số lớn nhất cùng chia hết cả a và b. Thuật toán Euclid là cách hiệu quả nhất để tìm GCD. Kể từ C++17, thư viện `<numeric>` cung cấp sẵn các hàm `std::gcd` và `std::lcm`. Bội chung nhỏ nhất (LCM) cũng có thể được tính thông qua GCD bằng công thức: `LCM(a, b) = (|a * b|) / GCD(a, b)`.' },
     { type: 'code', snippets: {
-        cpp: `#include <numeric> // Cho std::gcd ở C++17
-long long gcd(long long a, long long b) {
+        cpp: `#include <numeric> // Cần thiết cho std::gcd và std::lcm
+#include <iostream>
+#include <cmath> // for std::abs
+#include <utility> // for std::swap
+using namespace std;
+
+// Cách tự cài đặt (thuật toán Euclid)
+long long custom_gcd(long long a, long long b) {
     while (b) {
         a %= b;
-        std::swap(a, b);
+        swap(a, b);
     }
     return a;
 }
-long long lcm(long long a, long long b) {
+long long custom_lcm(long long a, long long b) {
     if (a == 0 || b == 0) return 0;
-    return std::abs(a * b) / gcd(a, b);
+    return abs(a * b) / custom_gcd(a, b);
+}
+
+// Sử dụng hàm có sẵn (từ C++17)
+void use_builtin_functions() {
+    long long a = 48, b = 18;
+    // cout << "GCD cua " << a << " va " << b << " la: " << gcd(a, b) << endl; // Output: 6
+    // cout << "LCM cua " << a << " va " << b << " la: " << lcm(a, b) << endl; // Output: 144
 }`,
         javascript: `function gcd(a, b) {
   while (b) { [a, b] = [b, a % b]; }

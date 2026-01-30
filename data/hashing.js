@@ -11,15 +11,16 @@ export const hashing = {
         cpp: `#include <iostream>
 #include <vector>
 #include <unordered_map>
+using namespace std;
 
 int main() {
-    std::vector<int> nums = {1, 2, 2, 3, 1, 3, 3};
-    std::unordered_map<int, int> freqMap;
+    vector<int> nums = {1, 2, 2, 3, 1, 3, 3};
+    unordered_map<int, int> freqMap;
     for (int num : nums) {
         freqMap[num]++;
     }
     // freqMap bây giờ là {1: 2, 2: 2, 3: 3}
-    // std::cout << "So lan xuat hien cua so 3: " << freqMap[3]; // In ra 3
+    // cout << "So lan xuat hien cua so 3: " << freqMap[3]; // In ra 3
     return 0;
 }`,
         javascript: `const nums = [1, 2, 2, 3, 1, 3, 3];
@@ -51,9 +52,10 @@ for (int num : nums) {
     { type: 'code', snippets: {
         cpp: `#include <vector>
 #include <unordered_map>
+using namespace std;
 
-std::vector<int> twoSum(std::vector<int>& nums, int target) {
-    std::unordered_map<int, int> map;
+vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> map;
     for (int i = 0; i < nums.size(); ++i) {
         int complement = target - nums[i];
         if (map.count(complement)) {

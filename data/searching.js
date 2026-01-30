@@ -9,7 +9,9 @@ export const searching = {
     { type: 'paragraph', text: 'Duyệt qua từng phần tử cho đến khi tìm thấy. Độ phức tạp: O(n).' },
     { type: 'code', snippets: {
         cpp: `#include <vector>
-int linearSearch(const std::vector<int>& arr, int target) {
+using namespace std;
+
+int linearSearch(const vector<int>& arr, int target) {
     for (int i = 0; i < arr.size(); ++i) {
         if (arr[i] == target) {
             return i; // Return index
@@ -45,7 +47,9 @@ int linearSearch(const std::vector<int>& arr, int target) {
     { type: 'paragraph', text: 'Yêu cầu mảng phải được sắp xếp. Chia đôi khoảng tìm kiếm ở mỗi bước. Độ phức tạp: O(log n).' },
     { type: 'code', snippets: {
         cpp: `#include <vector>
-int binarySearch(const std::vector<int>& arr, int target) {
+using namespace std;
+
+int binarySearch(const vector<int>& arr, int target) {
     int left = 0, right = arr.size() - 1;
     while (left <= right) {
         int mid = left + (right - left) / 2;

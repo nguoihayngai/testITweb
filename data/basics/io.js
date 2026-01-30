@@ -9,13 +9,14 @@ export const io = {
     { type: 'paragraph', text: 'Sử dụng `cin` để đọc và `cout` để in. Cần `#include <iostream>` và `using namespace std;`.' },
     { type: 'code', snippets: {
         cpp: `#include <iostream>
+using namespace std;
 
 int main() {
     int n;
-    std::cout << "Nhap mot so nguyen: ";
-    std::cin >> n;
+    cout << "Nhap mot so nguyen: ";
+    cin >> n;
     int ketQua = n * 2;
-    std::cout << "So do nhan 2 la: " << ketQua << std::endl;
+    cout << "So do nhan 2 la: " << ketQua << endl;
     return 0;
 }`,
         javascript: `// JavaScript trong môi trường trình duyệt dùng prompt/alert
@@ -42,9 +43,12 @@ public class Main {
     { type: 'heading', level: 4, text: 'Tăng tốc Nhập/Xuất (C++)' },
     { type: 'paragraph', text: 'Đối với các bài toán có lượng input/output lớn, thêm các dòng sau vào đầu hàm `main` để tăng tốc độ.' },
     { type: 'code', snippets: {
-        cpp: `int main() {
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
+        cpp: `#include <iostream>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     // ... code của bạn ...
     return 0;
 }`,

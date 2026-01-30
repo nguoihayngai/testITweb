@@ -9,8 +9,9 @@ export const dynamicProgramming = {
     { type: 'code', snippets: {
         cpp: `#include <iostream>
 #include <map>
+using namespace std;
 
-std::map<int, long long> memo;
+map<int, long long> memo;
 
 long long fibonacci(int n) {
     if (memo.count(n)) return memo[n];

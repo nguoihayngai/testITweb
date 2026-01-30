@@ -10,13 +10,14 @@ export const dataStructures = {
     { type: 'code', snippets: {
         cpp: `#include <stack>
 #include <iostream>
+using namespace std;
 
 int main() {
-    std::stack<int> s;
+    stack<int> s;
     s.push(1);
     s.push(2);
     s.pop(); // Removes 2
-    // std::cout << s.top(); // Accesses 1
+    // cout << s.top(); // Accesses 1
     return 0;
 }`,
         javascript: `class Stack {
@@ -44,13 +45,14 @@ stack.pop(); // returns 2
     { type: 'code', snippets: {
         cpp: `#include <queue>
 #include <iostream>
+using namespace std;
 
 int main() {
-    std::queue<int> q;
+    queue<int> q;
     q.push(1); // Add 1
     q.push(2); // Add 2
     q.pop();   // Removes 1
-    // std::cout << q.front(); // Accesses 2
+    // cout << q.front(); // Accesses 2
     return 0;
 }`,
         javascript: `class Queue {

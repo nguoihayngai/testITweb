@@ -7,10 +7,15 @@ export const dijkstra = {
     { type: 'paragraph', text: 'Thuật toán Dijkstra là một thuật toán tham lam, ở mỗi bước, nó chọn đỉnh chưa được thăm có khoảng cách ngắn nhất từ đỉnh nguồn và cập nhật khoảng cách cho các đỉnh kề của nó.' },
     { type: 'heading', level: 4, text: 'Mô tả thuật toán (Pseudo-code)' },
     { type: 'code', snippets: {
-        cpp: `// Using a priority queue for efficiency
-void dijkstra(int src, int V, std::vector<std::pair<int, int>> adj[]) {
-    std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, std::greater<std::pair<int, int>>> pq;
-    std::vector<int> dist(V, INT_MAX);
+        cpp: `#include <vector>
+#include <queue>
+#include <limits.h>
+using namespace std;
+
+// Using a priority queue for efficiency
+void dijkstra(int src, int V, vector<pair<int, int>> adj[]) {
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    vector<int> dist(V, INT_MAX);
 
     pq.push({0, src});
     dist[src] = 0;
