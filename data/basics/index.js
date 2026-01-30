@@ -6,6 +6,7 @@ import { io } from './io.js';
 import { controlFlow } from './controlFlow.js';
 import { operators } from './operators.js';
 import { bitwiseOperators } from './bitwiseOperators.js';
+import { rounding } from './rounding.js';
 
 export const basics = [
   numericTypes,
@@ -15,4 +16,5 @@ export const basics = [
   controlFlow,
   operators,
   bitwiseOperators,
+  rounding,
 ];
