@@ -37,7 +37,7 @@ if (tuoi >= 18) {
     { type: 'code', snippets: {
         cpp: `// In ra các số từ 0 đến 4
 for (int i = 0; i < 5; i++) {
-    // std::cout << i << std::endl;
+    // cout << i << endl;
 }`,
         javascript: `// In ra các số từ 0 đến 4
 for (let i = 0; i < 5; i++) {
@@ -56,7 +56,7 @@ for (int i = 0; i < 5; i++) {
      { type: 'code', snippets: {
         cpp: `int count = 0;
 while (count < 5) {
-    // std::cout << count;
+    // cout << count;
     count++;
 }`,
         javascript: `let count = 0;

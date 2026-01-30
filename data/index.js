@@ -12,11 +12,15 @@ import { dynamicProgramming } from './dynamicProgramming.js';
 import { trees } from './trees.js';
 import { graphTraversal } from './graphTraversal.js';
 import { dijkstra } from './dijkstra.js';
+import { competitiveProgrammingTricks } from './competitiveProgrammingTricks.js';
+import { stlAndStrings } from './stlAndStrings.js';
 
 export const algorithms = [
+  competitiveProgrammingTricks,
   sorting,
   searching,
   dataStructures,
+  stlAndStrings,
   hashing,
   recursion,
   pointers,
