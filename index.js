@@ -87,14 +87,14 @@ const App = () => {
       )
     ),
     React.createElement('main', { style: styles.main },
-      React.createElement('section', { id: "hero", style: styles.hero },
+      React.createElement('section', { id: "hero", className: "hero", style: styles.hero },
         React.createElement('h2', { className: "heroTitle", style: styles.heroTitle }, 'VLOJ contest'),
         React.createElement('p', { style: styles.heroSubtitle }, 'Thử sức mình với những câu hỏi thật hay!'),
         React.createElement('button', { className: "ctaButton", style: styles.ctaButton }, 'Bắt Đầu Ngay')
       ),
-       React.createElement('section', { style: styles.basicsSection },
-        React.createElement('h3', { style: styles.sectionTitle }, 'Hướng Dẫn Cơ Bản'),
-        React.createElement('div', { style: styles.coursesGrid },
+       React.createElement('section', { className: 'contentSection', style: styles.basicsSection },
+        React.createElement('h3', { className: "sectionTitle", style: styles.sectionTitle }, 'Hướng Dẫn Cơ Bản'),
+        React.createElement('div', { className: "coursesGrid", style: styles.coursesGrid },
           basics.map((item, index) =>
             React.createElement('div', { key: index, className: "courseCard", style: { ...styles.courseCard, cursor: 'pointer' }, onClick: () => setSelectedItem(item) },
               React.createElement('div', { style: styles.courseIcon }, item.icon),
@@ -104,9 +104,9 @@ const App = () => {
           )
         )
       ),
-      React.createElement('section', { style: styles.mathSection },
-        React.createElement('h3', { style: styles.sectionTitle }, 'Toán Học Thi Đấu'),
-        React.createElement('div', { style: styles.coursesGrid },
+      React.createElement('section', { className: 'contentSection', style: styles.mathSection },
+        React.createElement('h3', { className: "sectionTitle", style: styles.sectionTitle }, 'Toán Học Thi Đấu'),
+        React.createElement('div', { className: "coursesGrid", style: styles.coursesGrid },
           math.map((item, index) =>
             React.createElement('div', { key: index, className: "courseCard", style: { ...styles.courseCard, cursor: 'pointer' }, onClick: () => setSelectedItem(item) },
               React.createElement('div', { style: styles.courseIcon }, item.icon),
@@ -116,9 +116,9 @@ const App = () => {
           )
         )
       ),
-      React.createElement('section', { style: styles.algorithmsSection },
-        React.createElement('h3', { style: styles.sectionTitle }, 'Hướng Dẫn Thuật Toán'),
-        React.createElement('div', { style: styles.coursesGrid },
+      React.createElement('section', { className: 'contentSection', style: styles.algorithmsSection },
+        React.createElement('h3', { className: "sectionTitle", style: styles.sectionTitle }, 'Hướng Dẫn Thuật Toán'),
+        React.createElement('div', { className: "coursesGrid", style: styles.coursesGrid },
           algorithms.map((algo, index) =>
             React.createElement('div', { key: index, className: "courseCard", style: { ...styles.courseCard, cursor: 'pointer' }, onClick: () => setSelectedItem(algo) },
               React.createElement('div', { style: styles.courseIcon }, algo.icon),
@@ -221,7 +221,7 @@ const styles = {
   },
   coursesGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
     gap: '2rem',
     maxWidth: '1200px',
     margin: '0 auto',
@@ -337,6 +337,17 @@ const DynamicStyles = () => {
         }
         .heroTitle {
             font-size: 2.2rem !important;
+        }
+        .hero {
+            margin: 1rem !important;
+            padding: 3rem 1rem !important;
+        }
+        .contentSection {
+            padding: 3rem 1rem !important;
+        }
+        .sectionTitle {
+            font-size: 2rem !important;
+            margin-bottom: 2rem !important;
         }
       }
     `;
