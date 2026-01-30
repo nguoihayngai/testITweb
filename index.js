@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { algorithms } from './data/index.js';
 import { basics } from './data/basics/index.js';
+import { math } from './data/math/index.js';
 
 const CodeBlock = ({ snippets }) => {
   const [lang, setLang] = useState('cpp');
@@ -103,6 +104,18 @@ const App = () => {
           )
         )
       ),
+      React.createElement('section', { style: styles.mathSection },
+        React.createElement('h3', { style: styles.sectionTitle }, 'Toán Học Thi Đấu'),
+        React.createElement('div', { style: styles.coursesGrid },
+          math.map((item, index) =>
+            React.createElement('div', { key: index, className: "courseCard", style: { ...styles.courseCard, cursor: 'pointer' }, onClick: () => setSelectedItem(item) },
+              React.createElement('div', { style: styles.courseIcon }, item.icon),
+              React.createElement('h4', { style: styles.courseTitle }, item.title),
+              React.createElement('p', { style: styles.iconCardDescription }, item.description)
+            )
+          )
+        )
+      ),
       React.createElement('section', { style: styles.algorithmsSection },
         React.createElement('h3', { style: styles.sectionTitle }, 'Hướng Dẫn Thuật Toán'),
         React.createElement('div', { style: styles.coursesGrid },
@@ -192,9 +205,13 @@ const styles = {
     padding: '4rem 2rem',
     backgroundColor: '#ffffff',
   },
-  algorithmsSection: {
+  mathSection: {
     padding: '4rem 2rem',
     backgroundColor: '#f8f9fa',
+  },
+  algorithmsSection: {
+    padding: '4rem 2rem',
+    backgroundColor: '#ffffff',
   },
   sectionTitle: {
     textAlign: 'center',
