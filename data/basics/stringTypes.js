@@ -6,7 +6,7 @@ export const stringTypes = {
   content: [
     { type: 'paragraph', text: 'Xâu (string) là một chuỗi tuần tự các ký tự, được sử dụng để lưu trữ và xử lý văn bản.' },
     { type: 'heading', level: 4, text: 'Các thao tác cơ bản' },
-    { type: 'paragraph', text: '• Nối xâu: Ghép hai hay nhiều xâu lại với nhau.\n• Lấy độ dài: Đếm số ký tự trong xâu.\n• Truy cập ký tự: Lấy ký tự tại một vị trí (chỉ số) cụ thể.\n• Cắt xâu con: Trích xuất một phần của xâu.' },
+    { type: 'paragraph', text: '* **Nối xâu**: Ghép hai hay nhiều xâu lại với nhau.\n* **Lấy độ dài**: Đếm số ký tự trong xâu.\n* **Truy cập ký tự**: Lấy ký tự tại một vị trí (chỉ số) cụ thể.\n* **Cắt xâu con**: Trích xuất một phần của xâu.' },
     { type: 'code', snippets: {
         cpp: `#include <string>
 #include <iostream>

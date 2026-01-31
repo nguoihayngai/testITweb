@@ -6,7 +6,7 @@ export const numericTypes = {
   content: [
     { type: 'paragraph', text: 'Dùng để lưu trữ các giá trị số. Lựa chọn kiểu dữ liệu phù hợp giúp tối ưu bộ nhớ và tránh các lỗi tính toán không mong muốn (tràn số, mất độ chính xác).' },
     { type: 'heading', level: 4, text: 'Số Nguyên (Integer)' },
-    { type: 'paragraph', text: 'Dùng để lưu trữ các con số không có phần thập phân. Các kiểu phổ biến bao gồm:\n• int: Dùng cho số nguyên trong phạm vi vừa phải (thường là 32-bit).\n• long (C++): Có kích thước ít nhất là 32-bit, thường dùng cho các số lớn hơn `int`.\n• long long (C++): Dùng cho số nguyên rất lớn (ít nhất là 64-bit).\n• unsigned int/long/long long: Dùng khi chỉ cần lưu trữ số không âm (>= 0), giúp tăng gấp đôi phạm vi giá trị dương.\n• int_fast64_t (C++): Một kiểu dữ liệu có ít nhất 64 bit, được tối ưu hóa cho tốc độ trên hệ thống cụ thể.' },
+    { type: 'paragraph', text: 'Dùng để lưu trữ các con số không có phần thập phân. Các kiểu phổ biến bao gồm:\n* `int`: Dùng cho số nguyên trong phạm vi vừa phải (thường là 32-bit).\n* `long` (C++): Có kích thước ít nhất là 32-bit, thường dùng cho các số lớn hơn `int`.\n* `long long` (C++): Dùng cho số nguyên rất lớn (ít nhất là 64-bit).\n* `unsigned int/long/long long`: Dùng khi chỉ cần lưu trữ số không âm (>= 0), giúp tăng gấp đôi phạm vi giá trị dương.\n* `int_fast64_t` (C++): Một kiểu dữ liệu có ít nhất 64 bit, được tối ưu hóa cho tốc độ trên hệ thống cụ thể.' },
     { type: 'code', snippets: {
         cpp: `#include <cstdint> // Cần thiết cho int_fast64_t
 
@@ -34,7 +34,7 @@ int soHocSinh = 30;
 long soNguoiTrenTraiDat = 8000000000L; // long trong Java là 64-bit`
     }},
     { type: 'heading', level: 4, text: 'Số Thực (Floating-Point)' },
-    { type: 'paragraph', text: 'Dùng để biểu diễn các số có phần thập phân. Các kiểu phổ biến bao gồm:\n• float: Số thực có độ chính xác đơn, tốn ít bộ nhớ hơn.\n• double: Số thực có độ chính xác kép, là lựa chọn mặc định cho hầu hết các trường hợp vì độ chính xác cao hơn.' },
+    { type: 'paragraph', text: 'Dùng để biểu diễn các số có phần thập phân. Các kiểu phổ biến bao gồm:\n* `float`: Số thực có độ chính xác đơn, tốn ít bộ nhớ hơn.\n* `double`: Số thực có độ chính xác kép, là lựa chọn mặc định cho hầu hết các trường hợp vì độ chính xác cao hơn.' },
     { type: 'code', snippets: {
         cpp: `// Nên dùng double cho độ chính xác cao hơn
 float pi_approx = 3.14f;

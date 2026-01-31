@@ -1,46 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
+import { marked } from 'marked';
 import { algorithms } from './data/index.js';
 import { basics } from './data/basics/index.js';
 import { math } from './data/math/index.js';
 import { contests } from './data/contests/index.js';
+import CodeBlock from './components/CodeBlock.js';
 
-const CodeBlock = ({ snippets }) => {
-  const [lang, setLang] = useState('cpp');
-
-  const languageNames = {
-    cpp: 'C++',
-    javascript: 'JavaScript',
-    python: 'Python',
-    java: 'Java',
-  };
-
-  const buttonStyle = (language) => ({
-    padding: '0.3rem 0.8rem',
-    border: '1px solid #ddd',
-    backgroundColor: lang === language ? '#007aff' : '#f4f4f4',
-    color: lang === language ? '#fff' : '#333',
-    cursor: 'pointer',
-    borderTopLeftRadius: '4px',
-    borderTopRightRadius: '4px',
-    marginRight: '4px',
-    fontFamily: 'inherit',
-    fontSize: '0.85rem'
-  });
-
-  return React.createElement('div', null,
-    React.createElement('div', { style: { marginBottom: '-1px' } },
-      Object.keys(snippets).map(language =>
-        React.createElement('button', { key: language, style: buttonStyle(language), onClick: () => setLang(language) },
-          languageNames[language]
-        )
-      )
-    ),
-    React.createElement('pre', { style: styles.codeBlock },
-      React.createElement('code', null, snippets[lang])
-    )
-  );
+const processMarkdown = (text) => {
+  if (!text) return '';
+  return marked.parse(text);
 };
 
 const App = () => {
@@ -51,7 +21,13 @@ const App = () => {
     return content.map((item, index) => {
       switch (item.type) {
         case 'paragraph':
-          return React.createElement('p', { key: index, style: styles.paragraph }, item.text.split('\n').map((line, i) => React.createElement(React.Fragment, { key: i }, line, React.createElement('br'))));
+          const html = processMarkdown(item.text);
+          return React.createElement('div', {
+            key: index,
+            className: 'markdown-content',
+            style: styles.paragraph,
+            dangerouslySetInnerHTML: { __html: html }
+          });
         case 'heading':
           const Heading = `h${item.level}`;
           return React.createElement(Heading, { key: index }, item.text);
@@ -159,7 +135,7 @@ const App = () => {
           React.createElement('div', { style: styles.courseIcon }, view.topic.icon),
           React.createElement('h3', { style: styles.modalTitle }, view.topic.title)
         ),
-        React.createElement('div', null, renderContent(view.topic.content))
+        React.createElement('div', { className: 'detail-view-content' }, renderContent(view.topic.content))
       );
     } else {
       return React.createElement('section', { className: 'contentSection', style: currentPageInfo.style },
@@ -405,17 +381,6 @@ const styles = {
     color: '#007aff',
     margin: 0,
   },
-  codeBlock: {
-    backgroundColor: '#f4f4f4',
-    padding: '1rem',
-    borderRadius: '8px',
-    borderTopLeftRadius: '0',
-    overflowX: 'auto',
-    textAlign: 'left',
-    fontSize: '0.9rem',
-    margin: '1rem 0',
-    border: '1px solid #ddd'
-  },
   paragraph: {
     lineHeight: 1.7,
     fontSize: '1.1rem',
@@ -510,7 +475,28 @@ const DynamicStyles = () => {
         background-color: #007aff !important;
         color: #fff !important;
       }
-    
+      
+      .markdown-content p:last-child {
+        margin-bottom: 0;
+      }
+      .markdown-content ul, .markdown-content ol { 
+        padding-left: 2rem; 
+        margin-top: 0; 
+        margin-bottom: 1rem; 
+      }
+      .markdown-content li { 
+        margin-bottom: 0.5rem; 
+      }
+      .markdown-content code {
+        background-color: rgba(0, 122, 255, 0.1);
+        color: #0056b3;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        border-radius: 6px;
+        font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      }
+
       @media (max-width: 768px) {
         .logo {
           font-size: 1.5rem !important;

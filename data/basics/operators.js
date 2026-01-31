@@ -6,7 +6,7 @@ export const operators = {
   content: [
     { type: 'paragraph', text: 'Toán tử là các ký hiệu đặc biệt thực hiện các phép toán trên các biến và giá trị. Việc nắm vững chúng là nền tảng để viết bất kỳ chương trình nào.' },
     { type: 'heading', level: 4, text: 'Toán tử số học' },
-    { type: 'paragraph', text: 'Dùng để thực hiện các phép tính toán học cơ bản.\n• Cộng (+), Trừ (-), Nhân (*), Chia (/).\n• Chia lấy dư (%): Trả về phần dư của một phép chia.' },
+    { type: 'paragraph', text: 'Dùng để thực hiện các phép tính toán học cơ bản.\n* **Cộng (+)**, **Trừ (-)**, **Nhân (*)**, **Chia (/)**.\n* **Chia lấy dư (%)**: Trả về phần dư của một phép chia.' },
     { type: 'code', snippets: {
         cpp: `int a = 10, b = 3;
 int tong = a + b;   // 13
@@ -54,7 +54,7 @@ boolean ketQua2 = (x != y); // đúng
 boolean ketQua3 = (y > x);  // đúng`
     }},
     { type: 'heading', level: 4, text: 'Toán tử logic' },
-    { type: 'paragraph', text: 'Dùng để kết hợp các biểu thức điều kiện.\n• AND (&&): `true` nếu tất cả đều `true`.\n• OR (||): `true` nếu ít nhất một biểu thức là `true`.\n• NOT (!): Đảo ngược giá trị logic.' },
+    { type: 'paragraph', text: 'Dùng để kết hợp các biểu thức điều kiện.\n* **AND (`&&`)**: `true` nếu tất cả đều `true`.\n* **OR (`||`)**: `true` nếu ít nhất một biểu thức là `true`.\n* **NOT (`!`)**: Đảo ngược giá trị logic.' },
     { type: 'code', snippets: {
         cpp: `bool troiDep = true;
 bool coThoiGian = false;

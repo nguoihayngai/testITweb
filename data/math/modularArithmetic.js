@@ -6,7 +6,7 @@ export const modularArithmetic = {
   content: [
     { type: 'paragraph', text: 'Các phép toán trong modulo là cực kỳ quan trọng khi phải làm việc với các số rất lớn, thường thấy trong lập trình thi đấu.' },
     { type: 'heading', level: 4, text: '1. Lũy Thừa Nhị Phân (Binary Exponentiation)' },
-    { type: 'paragraph', text: 'Tính a^n % M một cách hiệu quả với độ phức tạp O(log n). Thuật toán dựa trên nguyên tắc a^n = (a^(n/2))^2 nếu n chẵn, và a^n = a * a^(n-1) nếu n lẻ.' },
+    { type: 'paragraph', text: 'Tính `aⁿ mod M` một cách hiệu quả với độ phức tạp O(log n). Thuật toán dựa trên nguyên tắc:\n* Nếu n chẵn: `aⁿ = (aⁿ/2)²`\n* Nếu n lẻ: `aⁿ = a * aⁿ⁻¹`' },
     { type: 'code', snippets: {
         cpp: `long long power(long long base, long long exp, long long mod) {
     long long res = 1;
@@ -20,7 +20,7 @@ export const modularArithmetic = {
 }`
     }},
     { type: 'heading', level: 4, text: '2. Nghịch Đảo Modulo (Modular Inverse)' },
-    { type: 'paragraph', text: 'Nghịch đảo modulo của a theo modulo M là một số x sao cho (a * x) % M = 1. Nếu M là số nguyên tố, ta có thể tìm nghịch đảo bằng Định lý nhỏ Fermat: a^(M-2) % M.' },
+    { type: 'paragraph', text: 'Nghịch đảo modulo của `a` theo modulo `M` là một số `x` sao cho `(a * x) mod M = 1`. Nếu `M` là số nguyên tố, ta có thể tìm nghịch đảo bằng Định lý nhỏ Fermat: `a^(M-2) mod M`.' },
     { type: 'code', snippets: {
         cpp: `// Dùng hàm power ở trên
 long long modInverse(long long n, long long mod) {
@@ -28,7 +28,7 @@ long long modInverse(long long n, long long mod) {
 }`
     }},
     { type: 'heading', level: 4, text: '3. Tổ Hợp C(n, k) Modulo M' },
-    { type: 'paragraph', text: 'Công thức tổ hợp C(n, k) = n! / (k! * (n-k)!). Khi tính theo modulo M, phép chia trở thành phép nhân với nghịch đảo modulo. C(n, k) % M = (n! * (k!)^-1 * ((n-k)!)^-1) % M. Ta cần tính trước các giai thừa.' },
+    { type: 'paragraph', text: 'Công thức tổ hợp `C(n, k) = n! / (k! * (n-k)!)`. Khi tính theo modulo M, phép chia trở thành phép nhân với nghịch đảo modulo:\n`C(n, k) mod M = (n! * inv(k!) * inv((n-k)!)) mod M`\nTa cần tính trước các giai thừa.' },
     { type: 'code', snippets: {
         cpp: `const int MAXN = 100001;
 long long fact[MAXN];
@@ -47,6 +47,16 @@ long long nCr_mod_p(int n, int r) {
     long long den = (modInverse(fact[r], M) * modInverse(fact[n - r], M)) % M;
     return (num * den) % M;
 }`
+    }},
+    { type: 'heading', level: 4, text: '4. Ứng Dụng: Tìm Chữ Số Cuối Cùng' },
+    { type: 'paragraph', text: 'Một ứng dụng phổ biến của lũy thừa modulo là tìm chữ số tận cùng của một số aⁿ. Chữ số tận cùng của aⁿ chính là kết quả của phép toán `aⁿ mod 10`. Ta có thể sử dụng lại hàm lũy thừa nhanh đã định nghĩa ở trên với `mod = 10`.' },
+    { type: 'code', snippets: {
+        cpp: `// Dùng hàm power ở trên
+long long lastDigit(long long base, long long exp) {
+    return power(base, exp, 10);
+}
+
+// Ví dụ: lastDigit(2, 100) sẽ trả về 6.`
     }},
   ]
 };
