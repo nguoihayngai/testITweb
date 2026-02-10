@@ -4,12 +4,11 @@ export const rounding = {
   description: 'Học cách làm tròn số thực lên, xuống hoặc đến số nguyên gần nhất bằng các hàm có sẵn.',
   icon: '🎯',
   content: [
-    { type: 'paragraph', text: 'Làm tròn số là một thao tác phổ biến khi làm việc với số thực (floating-point). Việc chọn đúng hàm làm tròn là rất quan trọng để đảm bảo tính chính xác của chương trình.' },
+    { type: 'paragraph', text: 'Làm tròn số là một thao tác phổ biến khi làm việc với số thực (floating-point). Việc chọn đúng hàm làm tròn là rất quan trọng để đảm bảo tính xác của chương trình.' },
     { type: 'heading', level: 4, text: 'Các Hàm Làm Tròn Phổ Biến' },
     { type: 'paragraph', text: '* `floor(x)`: **Làm tròn xuống**. Trả về số nguyên lớn nhất không vượt quá x. Ví dụ: `floor(3.7)` là 3, `floor(-3.2)` là -4.\n* `ceil(x)`: **Làm tròn lên**. Trả về số nguyên nhỏ nhất không nhỏ hơn x. Ví dụ: `ceil(3.2)` là 4, `ceil(-3.7)` là -3.\n* `round(x)`: **Làm tròn đến số nguyên gần nhất**. Quy tắc xử lý số có phần thập phân là `.5` có thể khác nhau giữa các ngôn ngữ (ví dụ: làm tròn đến số chẵn gần nhất hoặc luôn làm tròn lên).' },
     { type: 'code', snippets: {
-        cpp: `#include <iostream>
-#include <cmath> // Cần thiết cho các hàm làm tròn
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

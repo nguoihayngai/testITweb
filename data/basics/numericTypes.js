@@ -8,18 +8,22 @@ export const numericTypes = {
     { type: 'heading', level: 4, text: 'Số Nguyên (Integer)' },
     { type: 'paragraph', text: 'Dùng để lưu trữ các con số không có phần thập phân. Các kiểu phổ biến bao gồm:\n* `int`: Dùng cho số nguyên trong phạm vi vừa phải (thường là 32-bit).\n* `long` (C++): Có kích thước ít nhất là 32-bit, thường dùng cho các số lớn hơn `int`.\n* `long long` (C++): Dùng cho số nguyên rất lớn (ít nhất là 64-bit).\n* `unsigned int/long/long long`: Dùng khi chỉ cần lưu trữ số không âm (>= 0), giúp tăng gấp đôi phạm vi giá trị dương.\n* `int_fast64_t` (C++): Một kiểu dữ liệu có ít nhất 64 bit, được tối ưu hóa cho tốc độ trên hệ thống cụ thể.' },
     { type: 'code', snippets: {
-        cpp: `#include <cstdint> // Cần thiết cho int_fast64_t
+        cpp: `#include <bits/stdc++.h>
+using namespace std;
 
-int soHocSinh = 30;
-long danSoQuocGia = 100000000L; // Ít nhất 32-bit
-long long soNguoiTrenTraiDat = 8000000000LL;
+int main() {
+    int soHocSinh = 30;
+    long danSoQuocGia = 100000000L; // Ít nhất 32-bit
+    long long soNguoiTrenTraiDat = 8000000000LL;
 
-// Unsigned cho phép lưu giá trị dương lớn hơn
-unsigned int danSoThanhPho = 4000000000; 
-unsigned long long soSaoTrongThienHa = 100000000000ULL;
+    // Unsigned cho phép lưu giá trị dương lớn hơn
+    unsigned int danSoThanhPho = 4000000000; 
+    unsigned long long soSaoTrongThienHa = 100000000000ULL;
 
-// Kiểu dữ liệu được tối ưu cho tốc độ
-int_fast64_t soTinhToanNhanh = 9000000000000000000LL;`,
+    // Kiểu dữ liệu được tối ưu cho tốc độ
+    int_fast64_t soTinhToanNhanh = 9000000000000000000LL;
+    return 0;
+}`,
         javascript: `// JavaScript không có các kiểu int, unsigned hay fast riêng biệt.
 // Tất cả các số đều là dạng 64-bit float.
 let soHocSinh = 30;
@@ -36,9 +40,15 @@ long soNguoiTrenTraiDat = 8000000000L; // long trong Java là 64-bit`
     { type: 'heading', level: 4, text: 'Số Thực (Floating-Point)' },
     { type: 'paragraph', text: 'Dùng để biểu diễn các số có phần thập phân. Các kiểu phổ biến bao gồm:\n* `float`: Số thực có độ chính xác đơn, tốn ít bộ nhớ hơn.\n* `double`: Số thực có độ chính xác kép, là lựa chọn mặc định cho hầu hết các trường hợp vì độ chính xác cao hơn.' },
     { type: 'code', snippets: {
-        cpp: `// Nên dùng double cho độ chính xác cao hơn
-float pi_approx = 3.14f;
-double diemTrungBinh = 8.75;`,
+        cpp: `#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Nên dùng double cho độ chính xác cao hơn
+    float pi_approx = 3.14f;
+    double diemTrungBinh = 8.75;
+    return 0;
+}`,
         javascript: `let pi_approx = 3.14;
 let diemTrungBinh = 8.75;`,
         python: `# Python mặc định coi số có dấu phẩy là số thực

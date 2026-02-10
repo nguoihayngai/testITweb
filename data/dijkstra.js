@@ -7,9 +7,7 @@ export const dijkstra = {
     { type: 'paragraph', text: 'Thuật toán Dijkstra là một thuật toán tham lam, ở mỗi bước, nó chọn đỉnh chưa được thăm có khoảng cách ngắn nhất từ đỉnh nguồn và cập nhật khoảng cách cho các đỉnh kề của nó.' },
     { type: 'heading', level: 4, text: 'Mô tả thuật toán (Pseudo-code)' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <queue>
-#include <limits.h>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 // Dùng hàng đợi ưu tiên để tăng hiệu quả

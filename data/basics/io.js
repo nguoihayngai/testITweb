@@ -8,7 +8,7 @@ export const io = {
     { type: 'heading', level: 4, text: 'Nhập/Xuất trong C++' },
     { type: 'paragraph', text: 'Sử dụng `cin` để đọc và `cout` để in. Cần `#include <iostream>` và `using namespace std;`.' },
     { type: 'code', snippets: {
-        cpp: `#include <iostream>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -43,7 +43,7 @@ public class Main {
     { type: 'heading', level: 4, text: 'Tăng tốc Nhập/Xuất (C++)' },
     { type: 'paragraph', text: 'Đối với các bài toán có lượng input/output lớn, thêm các dòng sau vào đầu hàm `main` để tăng tốc độ.' },
     { type: 'code', snippets: {
-        cpp: `#include <iostream>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

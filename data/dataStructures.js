@@ -8,8 +8,7 @@ export const dataStructures = {
     { type: 'heading', level: 4, text: '1. Stack (Ngăn xếp - LIFO)' },
     { type: 'paragraph', text: 'Hoạt động theo nguyên tắc "Vào sau, ra trước" (Last-In, First-Out).' },
     { type: 'code', snippets: {
-        cpp: `#include <stack>
-#include <iostream>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -43,8 +42,7 @@ stack.pop(); // trả về 2
     { type: 'heading', level: 4, text: '2. Queue (Hàng đợi - FIFO)' },
     { type: 'paragraph', text: 'Hoạt động theo nguyên tắc "Vào trước, ra trước" (First-In, First-Out).' },
     { type: 'code', snippets: {
-        cpp: `#include <queue>
-#include <iostream>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

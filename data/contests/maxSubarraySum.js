@@ -10,8 +10,7 @@ export const maxSubarraySum = {
     { type: 'paragraph', text: 'Đây là một thuật toán hiệu quả với độ phức tạp O(n). Ta duyệt qua mảng và duy trì hai biến:\n* `current_max`: tổng của dãy con lớn nhất kết thúc tại vị trí hiện tại.\n* `global_max`: tổng lớn nhất tìm được cho đến nay.' },
     { type: 'paragraph', text: 'Tại mỗi vị trí `i`, `current_max` được cập nhật bằng `max(nums[i], current_max + nums[i])`. Điều này có nghĩa là ta quyết định xem nên bắt đầu một dãy con mới từ `nums[i]` hay tiếp tục mở rộng dãy con cũ. Sau đó, `global_max` được cập nhật nếu `current_max` lớn hơn.' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <algorithm>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int maxSubArray(const vector<int>& nums) {

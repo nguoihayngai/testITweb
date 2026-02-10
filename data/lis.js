@@ -10,8 +10,7 @@ export const lis = {
     { type: 'heading', level: 4, text: '1. Quy Hoạch Động - Độ phức tạp O(n²)' },
     { type: 'paragraph', text: 'Đây là cách tiếp cận đơn giản nhất. Gọi `dp[i]` là độ dài của dãy con tăng dài nhất kết thúc tại phần tử `a[i]`. Công thức truy hồi là: `dp[i] = 1 + max(dp[j])` với mọi `j < i` và `a[j] < a[i]`. Kết quả cuối cùng là giá trị lớn nhất trong mảng `dp`.' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <algorithm>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int lis_n2(const vector<int>& a) {
@@ -36,8 +35,7 @@ int lis_n2(const vector<int>& a) {
     { type: 'heading', level: 4, text: '2. Tối ưu với Tìm Kiếm Nhị Phân - Độ phức tạp O(n log n)' },
     { type: 'paragraph', text: 'Cách tiếp cận này hiệu quả hơn. Ta duy trì một mảng `tails`, trong đó `tails[i]` là phần tử cuối cùng nhỏ nhất của một dãy con tăng có độ dài `i+1`. Khi duyệt qua mảng, với mỗi phần tử `x`, ta tìm vị trí có thể chèn `x` vào `tails` để duy trì tính trật tự của nó bằng tìm kiếm nhị phân. Nếu `x` lớn hơn tất cả các phần tử trong `tails`, ta mở rộng `tails` ra.' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <algorithm> // Cần cho lower_bound
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int lis_nlogn(const vector<int>& a) {

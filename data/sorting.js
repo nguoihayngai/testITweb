@@ -8,8 +8,7 @@ export const sorting = {
     { type: 'heading', level: 4, text: '1. Bubble Sort (Sắp xếp nổi bọt)' },
     { type: 'paragraph', text: 'Duyệt qua danh sách nhiều lần, so sánh và đổi chỗ các cặp phần tử liền kề nếu chúng sai thứ tự. Độ phức tạp: O(n²).' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <utility> // Cần cho std::swap
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 void bubbleSort(vector<int>& arr) {
@@ -58,7 +57,7 @@ void bubbleSort(vector<int>& arr) {
     { type: 'heading', level: 4, text: '2. Insertion Sort (Sắp xếp chèn)' },
     { type: 'paragraph', text: 'Lấy từng phần tử và chèn nó vào đúng vị trí trong mảng con đã được sắp xếp. Độ phức tạp: O(n²).' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 void insertionSort(vector<int>& arr) {
@@ -110,7 +109,7 @@ void insertionSort(vector<int>& arr) {
     { type: 'heading', level: 4, text: '3. Merge Sort (Sắp xếp trộn)' },
     { type: 'paragraph', text: 'Dựa trên chiến lược "Chia để trị", chia đôi mảng và sắp xếp các mảng con rồi trộn lại. Độ phức tạp: O(n log n).' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 void merge(vector<int>& arr, int l, int m, int r) {
@@ -186,8 +185,7 @@ function merge(left, right) {
     { type: 'heading', level: 4, text: '4. Quick Sort (Sắp xếp nhanh)' },
     { type: 'paragraph', text: 'Cũng là "Chia để trị", chọn một phần tử làm "chốt" (pivot) và phân chia mảng xung quanh chốt. Độ phức tạp: O(n log n) trung bình.' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <algorithm>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int partition(vector<int>& arr, int low, int high) {

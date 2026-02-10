@@ -7,7 +7,7 @@ export const pointers = {
     { type: 'paragraph', text: 'Con trỏ là một biến lưu trữ địa chỉ bộ nhớ của một biến khác. Trong các ngôn ngữ như Java, Python, JavaScript, khái niệm này được trừu tượng hóa thành "tham chiếu".' },
     { type: 'heading', level: 4, text: 'Ví dụ: Con trỏ (C++) vs Tham chiếu (JS)' },
     { type: 'code', snippets: {
-        cpp: `#include <iostream>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

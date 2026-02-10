@@ -9,8 +9,7 @@ export const shortestPathGrid = {
     { type: 'paragraph', text: 'Vì mỗi bước đi (lên, xuống, trái, phải) đều có chi phí là 1, bài toán tìm đường đi ngắn nhất này có thể được giải quyết hiệu quả bằng BFS. BFS đảm bảo rằng chúng ta sẽ tìm thấy ô đích với số bước ít nhất có thể vì nó khám phá lưới theo từng lớp một.' },
     { type: 'paragraph', text: 'Ta sử dụng một hàng đợi để lưu các ô cần duyệt và một mảng `visited` (hoặc sửa trực tiếp lưới) để đánh dấu các ô đã đi qua. Hàng đợi sẽ lưu cả tọa độ và khoảng cách từ điểm xuất phát.' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <queue>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int shortestPathBinaryMatrix(vector<vector<int>>& grid) {

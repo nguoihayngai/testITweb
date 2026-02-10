@@ -11,7 +11,8 @@ export const bitwiseOperators = {
     { type: 'heading', level: 4, text: 'Dịch Trái (<<) và Dịch Phải (>>)' },
     { type: 'paragraph', text: '* **Dịch trái `x << y`**: Tương đương với `x * 2^y`. Ví dụ: `5 << 1` (0101 << 1) = 1010 (10).\n* **Dịch phải `x >> y`**: Tương đương với `x / 2^y` (chia số nguyên). Ví dụ: `5 >> 1` (0101 >> 1) = 0010 (2).' },
     { type: 'code', snippets: {
-        cpp: `#include <iostream>
+        cpp: `#include <bits/stdc++.h>
+using namespace std;
 
 int main() {
     int a = 5;  // 0101

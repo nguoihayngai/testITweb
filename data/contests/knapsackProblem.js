@@ -9,8 +9,7 @@ export const knapsackProblem = {
     { type: 'paragraph', text: 'Đây là một bài toán quy hoạch động kinh điển. Ta sẽ xây dựng một bảng 2D `dp[i][w]`, trong đó `dp[i][w]` là giá trị lớn nhất có thể đạt được khi sử dụng `i` vật phẩm đầu tiên với sức chứa tối đa là `w`.' },
     { type: 'paragraph', text: 'Công thức truy hồi: Khi xét vật phẩm thứ `i` (có trọng lượng `wt[i]` và giá trị `val[i]`):\n* **Nếu không chọn vật phẩm `i`**: `dp[i][w] = dp[i-1][w]`.\n* **Nếu chọn vật phẩm `i`** (chỉ khi `w >= wt[i]`): `dp[i][w] = val[i] + dp[i-1][w - wt[i]]`.\n\nTa sẽ chọn giá trị lớn hơn giữa hai trường hợp trên.' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <algorithm>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int knapsack(int W, const vector<int>& wt, const vector<int>& val) {

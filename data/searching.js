@@ -8,7 +8,7 @@ export const searching = {
     { type: 'heading', level: 4, text: '1. Linear Search (Tìm kiếm tuyến tính)' },
     { type: 'paragraph', text: 'Duyệt qua từng phần tử cho đến khi tìm thấy. Độ phức tạp: O(n).' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int linearSearch(const vector<int>& arr, int target) {
@@ -46,7 +46,7 @@ int linearSearch(const vector<int>& arr, int target) {
     { type: 'heading', level: 4, text: '2. Binary Search (Tìm kiếm nhị phân)' },
     { type: 'paragraph', text: 'Yêu cầu mảng phải được sắp xếp. Chia đôi khoảng tìm kiếm ở mỗi bước. Độ phức tạp: O(log n).' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int binarySearch(const vector<int>& arr, int target) {

@@ -7,8 +7,7 @@ export const dynamicProgramming = {
     { type: 'paragraph', text: 'Quy hoạch động là một kỹ thuật tối ưu hóa bằng cách giải quyết các bài toán con và lưu trữ kết quả của chúng để tránh tính toán lại.' },
     { type: 'heading', level: 4, text: 'Ví dụ 1: Dãy số Fibonacci (Memoization)' },
     { type: 'code', snippets: {
-        cpp: `#include <iostream>
-#include <map>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 map<int, long long> memo;
@@ -56,8 +55,7 @@ public class DP {
     { type: 'heading', level: 4, text: 'Ví dụ 2: Bài Toán Đổi Tiền (Tối Ưu)' },
     { type: 'paragraph', text: 'Khác với phương pháp tham lam (luôn chọn đồng xu lớn nhất), quy hoạch động đảm bảo tìm ra số lượng đồng xu ít nhất cho mọi hệ thống mệnh giá. Ta sẽ xây dựng một mảng `dp` trong đó `dp[i]` là số đồng xu nhỏ nhất để tạo thành tổng `i`. Công thức là `dp[i] = min(dp[i], dp[i - coin] + 1)`.' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <algorithm>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int coinChange(const vector<int>& coins, int amount) {

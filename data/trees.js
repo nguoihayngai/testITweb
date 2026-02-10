@@ -7,7 +7,10 @@ export const trees = {
     { type: 'paragraph', text: 'Cây là một cấu trúc dữ liệu phân cấp. Cây tìm kiếm nhị phân (BST) là một dạng đặc biệt nơi giá trị các nút con bên trái luôn nhỏ hơn nút cha, và các nút con bên phải luôn lớn hơn.' },
     { type: 'heading', level: 4, text: 'Ví dụ: Triển khai Cây Tìm Kiếm Nhị Phân' },
     { type: 'code', snippets: {
-        cpp: `struct Node {
+        cpp: `#include <bits/stdc++.h>
+using namespace std;
+
+struct Node {
     int key;
     Node *left, *right;
 };

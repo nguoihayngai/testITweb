@@ -6,7 +6,7 @@ export const competitiveProgrammingTricks = {
   content: [
     { type: 'heading', level: 4, text: '1. Tối ưu hóa Nhập/Xuất (Fast I/O)' },
     { type: 'paragraph', text: 'Trong các bài thi có giới hạn thời gian chặt chẽ, tốc độ nhập xuất dữ liệu là yếu tố sống còn. Thêm các dòng sau vào đầu hàm `main` để tăng tốc độ `cin` và `cout`.' },
-    { type: 'code', snippets: { cpp: `#include <iostream>
+    { type: 'code', snippets: { cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -22,9 +22,7 @@ int main() {
     { type: 'heading', level: 4, text: '2. Mảng Cộng Dồn (Prefix Sum)' },
     { type: 'paragraph', text: 'Kỹ thuật này giúp giảm độ phức tạp khi phải tính tổng của nhiều đoạn con trong một mảng. Tổng của đoạn [L, R] có thể được tính trong O(1) sau khi tiền xử lý mảng trong O(N).' },
     { type: 'paragraph', text: 'Công thức: `sum(L, R) = prefix[R] - prefix[L-1]`' },
-    { type: 'code', snippets: { cpp: `// Mảng cộng dồn 1 chiều
-#include <vector>
-#include <iostream>
+    { type: 'code', snippets: { cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -45,10 +43,7 @@ int main() {
 }`}},
     { type: 'heading', level: 4, text: '3. Kỹ Thuật Hai Con Trỏ (Two Pointers)' },
     { type: 'paragraph', text: 'Kỹ thuật này dùng hai con trỏ (thường là chỉ số mảng) di chuyển qua dữ liệu để tìm kiếm các cặp hoặc dãy con thỏa mãn điều kiện. Nó thường giúp giảm độ phức tạp từ O(N²) xuống O(N) cho các bài toán trên mảng đã sắp xếp.' },
-    { type: 'code', snippets: { cpp: `// Tìm một cặp có tổng bằng X trong mảng đã sắp xếp
-#include <vector>
-#include <iostream>
-#include <algorithm>
+    { type: 'code', snippets: { cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 void findPair(vector<int>& arr, int target) {
@@ -70,7 +65,7 @@ void findPair(vector<int>& arr, int target) {
 }`}},
     { type: 'heading', level: 4, text: '4. Sàng SPF (Smallest Prime Factor)' },
     { type: 'paragraph', text: 'Đây là một biến thể của sàng Eratosthenes. Thay vì chỉ đánh dấu số nguyên tố, ta lưu lại ước nguyên tố nhỏ nhất (Smallest Prime Factor - SPF) của mỗi số. Điều này cho phép phân tích một số ra thừa số nguyên tố trong thời gian O(log N) sau khi sàng.' },
-    { type: 'code', snippets: { cpp: `#include <vector>
+    { type: 'code', snippets: { cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 const int MAXN = 100001;

@@ -11,7 +11,8 @@ export const arithmetic = {
     { type: 'heading', level: 4, text: 'Cách tính lũy thừa trong C++' },
     { type: 'paragraph', text: 'Cách đơn giản nhất là dùng vòng lặp. Tuy nhiên, với số mũ lớn, kỹ thuật "Lũy thừa nhanh" (xem trong mục Lũy thừa & Tổ hợp Modulo) sẽ hiệu quả hơn nhiều.' },
     { type: 'code', snippets: {
-        cpp: `#include <iostream>
+        cpp: `#include <bits/stdc++.h>
+using namespace std;
 
 long long power(int base, int exp) {
     long long res = 1;

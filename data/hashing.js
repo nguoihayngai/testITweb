@@ -8,9 +8,7 @@ export const hashing = {
     { type: 'heading', level: 4, text: 'Ứng dụng 1: Đếm Tần Suất' },
     { type: 'paragraph', text: 'Một trong những ứng dụng phổ biến nhất của hash map là đếm số lần xuất hiện của các phần tử trong một tập hợp.' },
     { type: 'code', snippets: {
-        cpp: `#include <iostream>
-#include <vector>
-#include <unordered_map>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -50,8 +48,7 @@ for (int num : nums) {
     { type: 'heading', level: 4, text: 'Ứng dụng 2: Bài toán Two Sum' },
     { type: 'paragraph', text: 'Cho một mảng các số nguyên và một số mục tiêu, tìm chỉ số của hai số trong mảng có tổng bằng số mục tiêu. Hash map giúp giải bài toán này trong thời gian O(n).' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <unordered_map>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 vector<int> twoSum(vector<int>& nums, int target) {

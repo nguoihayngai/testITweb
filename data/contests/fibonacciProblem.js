@@ -10,7 +10,7 @@ export const fibonacciProblem = {
     { type: 'heading', level: 4, text: 'Giải Pháp Quy Hoạch Động (Tabulation)' },
     { type: 'paragraph', text: 'Ta tạo một mảng `dp` kích thước n+1. Khởi tạo `dp[0]=0` và `dp[1]=1`. Sau đó, ta điền vào mảng bằng vòng lặp: `dp[i] = dp[i-1] + dp[i-2]`. Cách này có độ phức tạp O(n) về thời gian và O(n) về không gian.' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 long long fib(int n) {
@@ -27,7 +27,10 @@ long long fib(int n) {
     { type: 'heading', level: 4, text: 'Tối ưu Không Gian' },
     { type: 'paragraph', text: 'Vì `dp[i]` chỉ phụ thuộc vào `dp[i-1]` và `dp[i-2]`, ta không cần lưu trữ toàn bộ mảng. Ta chỉ cần 2 biến để lưu 2 giá trị trước đó, giảm không gian xuống O(1).' },
      { type: 'code', snippets: {
-        cpp: `long long fib_optimized(int n) {
+        cpp: `#include <bits/stdc++.h>
+using namespace std;
+
+long long fib_optimized(int n) {
     if (n <= 1) return n;
     long long a = 0, b = 1, c;
     for (int i = 2; i <= n; ++i) {

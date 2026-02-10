@@ -10,9 +10,7 @@ export const lcsProblem = {
     { type: 'paragraph', text: 'Gọi `dp[i][j]` là độ dài LCS của hai chuỗi con `text1[0...i-1]` và `text2[0...j-1]`.' },
     { type: 'paragraph', text: '* Nếu `text1[i-1] == text2[j-1]`, thì ký tự này thuộc LCS. Ta có: `dp[i][j] = 1 + dp[i-1][j-1]`.\n* Nếu `text1[i-1] != text2[j-1]`, thì ký tự này không cùng thuộc LCS. Ta phải bỏ qua một trong hai ký tự và lấy kết quả tốt nhất: `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`.' },
     { type: 'code', snippets: {
-        cpp: `#include <string>
-#include <vector>
-#include <algorithm>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int longestCommonSubsequence(string text1, string text2) {

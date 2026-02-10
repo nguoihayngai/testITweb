@@ -10,8 +10,7 @@ export const arrayTypes = {
     { type: 'heading', level: 4, text: 'Mảng động (Dynamic Array / Vector)' },
     { type: 'paragraph', text: 'Kích thước có thể thay đổi trong quá trình chạy chương trình bằng cách thêm hoặc xóa phần tử. `vector` trong C++ là một ví dụ điển hình.' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
-#include <iostream>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

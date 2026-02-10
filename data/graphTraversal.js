@@ -8,10 +8,7 @@ export const graphTraversal = {
     { type: 'heading', level: 4, text: '1. BFS - Tìm kiếm theo chiều rộng' },
     { type: 'paragraph', text: 'Sử dụng một hàng đợi (Queue) để khám phá các đỉnh kề trước khi đi sâu hơn.' },
     { type: 'code', snippets: {
-        cpp: `#include <map>
-#include <vector>
-#include <set>
-#include <queue>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 // Giả sử đồ thị được biểu diễn bằng map<int, vector<int>>
@@ -84,9 +81,7 @@ void bfs(int startNode, Map<Integer, List<Integer>> graph) {
     { type: 'heading', level: 4, text: '2. DFS - Tìm kiếm theo chiều sâu' },
     { type: 'paragraph', text: 'Sử dụng đệ quy (hoặc một ngăn xếp - Stack) để đi sâu nhất có thể vào một nhánh trước khi quay lui.' },
     { type: 'code', snippets: {
-        cpp: `#include <map>
-#include <vector>
-#include <set>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 // Giả sử biểu diễn đồ thị

@@ -9,7 +9,7 @@ export const climbingStairs = {
     { type: 'paragraph', text: 'Để đến bậc thứ `i`, bạn có thể đến từ bậc `i-1` (bước 1 bậc) hoặc từ bậc `i-2` (bước 2 bậc). Vì vậy, tổng số cách để đến bậc `i` là tổng số cách đến bậc `i-1` và bậc `i-2`. Đây chính là công thức của dãy Fibonacci.' },
     { type: 'paragraph', text: 'Gọi `dp[i]` là số cách để leo đến bậc thứ `i`. Ta có: `dp[i] = dp[i-1] + dp[i-2]`. Điều kiện cơ sở là `dp[1] = 1` (1 cách) và `dp[2] = 2` (2 cách: 1+1 hoặc 2).' },
     { type: 'code', snippets: {
-        cpp: `#include <vector>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int climbStairs(int n) {

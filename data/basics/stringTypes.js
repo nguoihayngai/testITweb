@@ -8,8 +8,7 @@ export const stringTypes = {
     { type: 'heading', level: 4, text: 'Các thao tác cơ bản' },
     { type: 'paragraph', text: '* **Nối xâu**: Ghép hai hay nhiều xâu lại với nhau.\n* **Lấy độ dài**: Đếm số ký tự trong xâu.\n* **Truy cập ký tự**: Lấy ký tự tại một vị trí (chỉ số) cụ thể.\n* **Cắt xâu con**: Trích xuất một phần của xâu.' },
     { type: 'code', snippets: {
-        cpp: `#include <string>
-#include <iostream>
+        cpp: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
