@@ -90,7 +90,7 @@ const App = () => {
           React.createElement('div', { style: styles.ctaButtonContainer },
             React.createElement('button', { className: "ctaButton", style: styles.ctaButton, onClick: () => {
               window.location.href = 'https://oj.vnoi.info/';
-              setView({ page: 'contests', topic: null })} }, 'Bắt Đầu Ngay'),
+              } }, 'Bắt Đầu Ngay'),
             React.createElement('button', {
               className: "secondaryCtaButton",
               style: styles.secondaryCtaButton,
