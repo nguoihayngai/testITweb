@@ -88,12 +88,13 @@ const App = () => {
           React.createElement('h2', { className: "heroTitle", style: styles.heroTitle }, 'VLOJ contest'),
           React.createElement('p', { style: styles.heroSubtitle }, 'Thử sức mình với những câu hỏi thật hay!'),
           React.createElement('div', { style: styles.ctaButtonContainer },
-            React.createElement('button', { className: "ctaButton", style: styles.ctaButton, onClick: () => setView({ page: 'contests', topic: null }) }, 'Bắt Đầu Ngay'),
+            React.createElement('button', { className: "ctaButton", style: styles.ctaButton, onClick: () => {
+              window.location.href = 'https://oj.vnoi.info/';
+              setView({ page: 'contests', topic: null })} }, 'Bắt Đầu Ngay'),
             React.createElement('button', {
               className: "secondaryCtaButton",
               style: styles.secondaryCtaButton,
               onClick: () => {
-                window.location.href = 'https://oj.vnoi.info/';
                 document.getElementById('explore-topics').scrollIntoView({ behavior: 'smooth' });
               }
             }, 'Khám Phá Chủ Đề')
