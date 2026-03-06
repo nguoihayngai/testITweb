@@ -93,6 +93,7 @@ const App = () => {
               className: "secondaryCtaButton",
               style: styles.secondaryCtaButton,
               onClick: () => {
+                window.location.href = 'https://oj.vnoi.info/';
                 document.getElementById('explore-topics').scrollIntoView({ behavior: 'smooth' });
               }
             }, 'Khám Phá Chủ Đề')
